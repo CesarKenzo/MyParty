@@ -1,0 +1,73 @@
+
+<header>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <nav id="menu-h">
+        <ul>
+            <button style="background-color: #444444; border: #444444; text-align: left;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="material-icons md-light">menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Meu Perfil</span>
+                </button>
+                    <button mat-menu-item>
+                    <mat-icon>book_online</mat-icon>
+                    <span>Meus Ingressos</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>store</mat-icon>
+                    <span>Marketplace</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>info</mat-icon>
+                    <span>Ajuda</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>call</mat-icon>
+                    <span>Contato</span>
+                </button>
+            </mat-menu>
+              
+            <li>
+                <a href="index.html">
+                    <h1 class="logo_title">My Party</h1>
+                </a>
+            </li>
+            <li> </li><li> </li>
+            <li>
+                <input type="text" placeholder="Search.." id="myInput">
+            </li>
+            <li>
+                <button style="background-color: #444444; border: #444444;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon class="material-icons md-light">filter_alt</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>account_circle</mat-icon>
+                        <span>Meu Perfil</span>
+                    </button>
+                        <button mat-menu-item>
+                        <mat-icon>book_online</mat-icon>
+                        <span>Meus Ingressos</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>store</mat-icon>
+                        <span>Marketplace</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>info</mat-icon>
+                        <span>Ajuda</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>call</mat-icon>
+                        <span>Contato</span>
+                    </button>
+                </mat-menu>
+            </li>
+            <button class="button_login">Login</button>
+            <button class="button_signUp">Sign Up</button>
+        </ul>
+    </nav>
+</header>

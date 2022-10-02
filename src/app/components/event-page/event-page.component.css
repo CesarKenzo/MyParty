@@ -1,0 +1,35 @@
+.rating {
+    float: right;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    background-color: transparent;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column_image{
+    float: left;
+    width: 50%;
+    max-height: 300px;
+    max-width: 200px;
+    background-size: cover;
+}
+
+.column_relacionados{
+    float: left;
+    width: 25%;
+    max-height: 400px;
+    max-width: 300px;
+    background-size: cover;
+}
+
+.eventos_relacionados_card{
+    background-color: transparent;
+}
