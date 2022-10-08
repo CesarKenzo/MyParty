@@ -20,7 +20,7 @@
         <div class="column">
             <mat-card class="example-card">
                 <mat-card-header> </mat-card-header>
-                <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Mapa_de_Mentira.png?sp=r&st=2022-10-02T22:05:20Z&se=2022-10-08T06:05:20Z&spr=https&sv=2021-06-08&sr=b&sig=GDcSqRJ0PTHbvUZl6EjfpRSYNyrQHd%2BDNnBBrkhAASU%3D" alt="Foto da Festa 1">
+                <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Mapa_de_Mentira.png" alt="Foto da Festa 1">
                 <mat-card-footer>
                     Localização: (Rua Número ...)
                 </mat-card-footer>
@@ -40,10 +40,10 @@
                 <br/>
             </mat-card-content>
             <mat-chip-list>
-                <mat-chip>Categoria 1</mat-chip>
-                <mat-chip>Categoria 2</mat-chip>
-                <mat-chip>Categoria 3</mat-chip>
-                <mat-chip>Categoria 4</mat-chip>
+                <mat-chip class="tag-chip">Categoria 1</mat-chip>
+                <mat-chip class="tag-chip">Categoria 2</mat-chip>
+                <mat-chip class="tag-chip">Categoria 3</mat-chip>
+                <mat-chip class="tag-chip">Categoria 4</mat-chip>
             </mat-chip-list>
         </mat-card>
         <br/>
@@ -56,6 +56,93 @@
                 - Atração 4 <br/>
             </mat-card-content>
         </mat-card>
+        <br/><br/>
+    </section>
+    <section id="compraCards">
+        <div class="row">
+            <div class="column">
+                <mat-card style="background-color: #4169e14d">
+                    <mat-card-header>
+                        <div mat-card-avatar class="card_header_avatar"><mat-icon>store</mat-icon></div>
+                        <mat-card-title>MarketPlace</mat-card-title>
+                        <mat-card-subtitle>Compre de Usuários!</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-card class="ingresso-card">
+                            <mat-card-header>
+                                <div mat-card-avatar class="card_header_avatar"><mat-icon>perm_identity</mat-icon></div>
+                                <mat-card-title>Usuário 1</mat-card-title>
+                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Descrição:  
+                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+                        <br/>
+                        <mat-card class="ingresso-card">
+                            <mat-card-header>
+                                <div mat-card-avatar class="card_header_avatar"><mat-icon>perm_identity</mat-icon></div>
+                                <mat-card-title>Usuário 2</mat-card-title>
+                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Descrição:  
+                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+                    </mat-card-content>
+                    <mat-card-actions style="text-align: center;">
+                        <button mat-button routerLink="/shop">Comprar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="column">
+                <mat-card style="background-color: #4169e14d">
+                    <mat-card-header>
+                        <div mat-card-avatar class="card_header_avatar"><mat-icon>shopping_cart</mat-icon></div>
+                        <mat-card-title>Ingressos</mat-card-title>
+                        <mat-card-subtitle>Compre seu Ingresso!</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-card class="ingresso-card">
+                            <mat-card-header>
+                                <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
+                                <mat-card-title>Ingresso 1</mat-card-title>
+                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Descrição:  
+                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+                        <br/>
+                        <mat-card class="ingresso-card">
+                            <mat-card-header>
+                                <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
+                                <mat-card-title>Ingresso 2</mat-card-title>
+                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Descrição:  
+                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+                    </mat-card-content>
+                    <mat-card-actions style="text-align: center;">
+                        <button mat-button routerLink="/shop">Comprar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
         <br/><br/>
     </section>
     <section id="reviews">
@@ -103,7 +190,7 @@
                     <mat-card-header>
                         <mat-card-title></mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg?sp=r&st=2022-10-02T20:58:13Z&se=2022-10-08T04:58:13Z&spr=https&sv=2021-06-08&sr=b&sig=QBauLgZxdop48%2BilUB5o0pCrQGRky3Sj3f4zZm6UkGE%3D" alt="Foto da Festa 1">
+                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg" alt="Foto da Festa 1">
                 </mat-card>
             </div>
             <div class="column_relacionados">

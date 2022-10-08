@@ -33,3 +33,15 @@
 .eventos_relacionados_card{
     background-color: transparent;
 }
+
+.ingresso-card {
+    background-color: #FFF;
+}
+
+.card_header_avatar {
+    background-size: cover;
+}
+
+.tag-chip {
+    background-color: #FFF;
+}

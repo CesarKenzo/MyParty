@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
-import { MatSliderModule } from '@angular/material/slider';
+import {MatSliderModule} from '@angular/material/slider';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,14 +21,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EventPageComponent } from './components/event-page/event-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ShopPageComponent } from './components/shop-page/shop-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    EventPageComponent
+    EventPageComponent,
+    ShopPageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTabsModule,
     MatIconModule,
     MatMenuModule,
+    MatButtonModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
     NgbModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
