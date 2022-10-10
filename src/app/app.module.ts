@@ -11,6 +11,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTreeModule} from '@angular/material/tree';
 import { FormsModule } from '@angular/forms';
 
 
@@ -22,6 +25,7 @@ import { EventPageComponent } from './components/event-page/event-page.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShopPageComponent } from './components/shop-page/shop-page.component';
+import { MarketplaceComponent } from './components/marketplace/marketplace.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { ShopPageComponent } from './components/shop-page/shop-page.component';
     HeaderComponent,
     FooterComponent,
     EventPageComponent,
-    ShopPageComponent
+    ShopPageComponent,
+    MarketplaceComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,9 @@ import { ShopPageComponent } from './components/shop-page/shop-page.component';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatTreeModule,
     NgbModule,
     FormsModule,
   ],

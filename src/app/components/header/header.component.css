@@ -20,7 +20,7 @@
 }
 
 #menu-h ul {
-    max-width: 1200px;
+    max-width: 1000px;
     list-style: none;
     padding: 0;
 }
@@ -101,4 +101,12 @@
     cursor: pointer;
     border-radius: 12px;
     float: right;
-  }
+}
+
+.search_field {
+    width: 450px;
+    height: 50px;
+    position: absolute;
+    align-items: center;
+    background-color: #FFF;
+}
