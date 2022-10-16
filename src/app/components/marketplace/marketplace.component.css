@@ -72,5 +72,10 @@
     text-align: end; 
     width: 90px; 
     background-color: transparent;
-    margin-left: 77%;
+    margin-left: 73%;
+}
+
+.chat-button {
+    background-color: #4169E1; 
+    margin-left: 93%;
 }
