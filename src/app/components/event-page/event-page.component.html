@@ -4,8 +4,8 @@
     <div>
         <mat-card style="background-color: #FFF; border-color: #4169e14d;">
             <mat-card-title title="review">
-                <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome da Festa
-                <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" style="float: right"></ngb-rating>
+                <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event.name}}
+                <ngb-rating [max]="5" [(rate)]="event.rating" [readonly]="true" style="float: right"></ngb-rating>
             </mat-card-title>
         </mat-card>
     </div>
@@ -14,7 +14,7 @@
         <div class="column">
             <mat-card class="example-card">
                 <mat-card-header> </mat-card-header>
-                <img mat-card-image src="https://veja.abril.com.br/wp-content/uploads/2021/02/BOA-1-veja_photo.alexferro.com_.br_.20022021-2-5.jpg.jpg" alt="Foto da Festa 1">
+                <img mat-card-image src="{{event.image}}" alt="Foto da Festa 1">
             </mat-card>
         </div>
         <div class="column">
@@ -32,18 +32,15 @@
         <mat-card style="background-color: #4169e14d">
             <mat-card-title title="Descrição">Descrição</mat-card-title>
             <mat-card-content>
-                Descrição da festa. 
+                {{event.description}}
                 <br/>
                 <br/>
                 <br/>
                 <br/>
                 <br/>
             </mat-card-content>
-            <mat-chip-list>
-                <mat-chip class="tag-chip">Categoria 1</mat-chip>
-                <mat-chip class="tag-chip">Categoria 2</mat-chip>
-                <mat-chip class="tag-chip">Categoria 3</mat-chip>
-                <mat-chip class="tag-chip">Categoria 4</mat-chip>
+            <mat-chip-list style="margin-left: 5%;">
+                <mat-chip *ngFor="let categorie of event.categories" class="tag-chip">{{categorie}}</mat-chip>
             </mat-chip-list>
         </mat-card>
         <br/>
@@ -151,7 +148,7 @@
             <mat-tab label="Evento"> 
                 <mat-card style="background-color: #4169e14d">
                     <mat-card-title title="review">
-                        <mat-icon>person</mat-icon> X: Festa Sensacional! 
+                        <mat-icon>person</mat-icon>Usuario X: Festa Sensacional! 
                             <ngb-rating [max]="5" [(rate)]="rating_comment1" [readonly]="true" style="float: right"></ngb-rating>
                         </mat-card-title>
                     <mat-card-content>
@@ -190,7 +187,7 @@
                     <mat-card-header>
                         <mat-card-title></mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg" alt="Foto da Festa 1">
+                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa2.jpg" alt="Foto da Festa 1">
                 </mat-card>
             </div>
             <div class="column_relacionados">
@@ -198,7 +195,7 @@
                     <mat-card-header>
                         <mat-card-title></mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src="https://loungesfestas.com.br/wp-content/uploads/2018/05/festa-tematica.jpg" alt="Foto da Festa 1">
+                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa3.jpg" alt="Foto da Festa 1">
                 </mat-card>
             </div>
             <div class="column_relacionados">
@@ -206,7 +203,7 @@
                     <mat-card-header>
                         <mat-card-title></mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src="https://veja.abril.com.br/wp-content/uploads/2021/02/BOA-1-veja_photo.alexferro.com_.br_.20022021-2-5.jpg.jpg" alt="Foto da Festa 1">
+                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa7.jpg" alt="Foto da Festa 1">
                 </mat-card>
             </div>
             <div class="column_relacionados">
@@ -214,7 +211,7 @@
                     <mat-card-header>
                         <mat-card-title></mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src="https://lh3.googleusercontent.com/-NXTgkn_I3lg/X51-o8f_cJI/AAAAAAAAAb4/RqFF_iqGsE8wUEayJzW-5BCl6pYXyUUqwCLcBGAsYHQ/image.png" alt="Foto da Festa 1">
+                    <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Festa6.jpg" alt="Foto da Festa 1">
                 </mat-card>
             </div>
         </div>

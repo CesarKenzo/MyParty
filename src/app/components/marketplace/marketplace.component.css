@@ -11,20 +11,14 @@
     max-width: 100%;
 }
 
-.list {
-    display: inline-table;
-    align-content: center;
-    align-items: center;
-}
-
 .row-search {
     right: 40%;
 }
 
 .example-card {
-    width: 70%;
-    align-self: center;
+    width: 75%;
     background-color: #99999986;
+    left: 10%;
 }
 
 .internal-card {
@@ -74,3 +68,9 @@
     margin-right: 4px;
 }
 
+.value-tag {
+    text-align: end; 
+    width: 90px; 
+    background-color: transparent;
+    margin-left: 77%;
+}
