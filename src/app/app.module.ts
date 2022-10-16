@@ -14,6 +14,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTable, MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 
 
@@ -26,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShopPageComponent } from './components/shop-page/shop-page.component';
 import { MarketplaceComponent } from './components/marketplace/marketplace.component';
+import { EventListComponent } from './components/event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { MarketplaceComponent } from './components/marketplace/marketplace.compo
     FooterComponent,
     EventPageComponent,
     ShopPageComponent,
-    MarketplaceComponent
+    MarketplaceComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,8 @@ import { MarketplaceComponent } from './components/marketplace/marketplace.compo
     MatExpansionModule,
     MatDatepickerModule,
     MatTreeModule,
+    MatPaginatorModule,
+    MatTableModule,
     NgbModule,
     FormsModule,
   ],
