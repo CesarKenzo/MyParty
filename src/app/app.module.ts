@@ -17,6 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTable, MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 
 
@@ -61,6 +62,7 @@ import { EventListComponent } from './components/event-list/event-list.component
     MatTreeModule,
     MatPaginatorModule,
     MatTableModule,
+    MatSelectModule,
     NgbModule,
     FormsModule,
     HttpClientModule,

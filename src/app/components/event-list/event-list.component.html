@@ -13,20 +13,22 @@
         </mat-expansion-panel-header>
         <mat-form-field appearance="fill" class="filter">
           <mat-label>Categorias</mat-label>
-          <select matNativeControl [(ngModel)]="categorieFilter">
-            <option value="None"> -- Selecione --</option>
-            <option *ngFor="let categorie of categorieList" value="{{categorie.name}}">{{categorie.name}}</option>
-          </select>
+          <mat-select matNativeControl [(ngModel)]="categorieFilter">
+            <mat-option value="None"> -- Selecione --</mat-option>
+            <mat-option *ngFor="let categorie of categorieList" [value]="categorie.name">{{categorie.name}}</mat-option>
+          </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill" class="filter">
+        <mat-form-field appearance="fill" class="filter"> 
           <mat-label>Produtor</mat-label>
-          <select matNativeControl [(ngModel)]="productionFilter">
-            <option value="None"> -- Selecione --</option>
-            <option *ngFor="let produtor of produtorList" value="{{produtor.name}}">{{produtor.name}}</option>
-          </select>
+          <mat-select matNativeControl [(ngModel)]="productionFilter">
+            <mat-option value="None"> -- Selecione --</mat-option>
+            <mat-option *ngFor="let produtor of produtorList" [value]="produtor.name">{{produtor.name}}</mat-option>
+          </mat-select>
         </mat-form-field>
         <br/>
-        <button mat-button style="left: 45%;">Filtrar</button>
+        <button mat-button style="left: 55%;" (click)="applyFilterCategory()">Filtrar Por Categoria</button>
+        <button mat-button style="left: 55%;" (click)="applyFilterProduction()">Filtrar Por Produtor</button>
+        <button mat-button style="left: 55%;" (click)="listEvents()">Limpar Filtros</button>
       </mat-expansion-panel>
     </mat-accordion>
 
