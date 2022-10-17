@@ -16,9 +16,9 @@
 }
 
 .example-card {
-    width: 75%;
+    width: 85%;
     background-color: #99999986;
-    left: 10%;
+    left: 8%;
 }
 
 .internal-card {
@@ -72,7 +72,7 @@
     text-align: end; 
     width: 90px; 
     background-color: transparent;
-    margin-left: 73%;
+    margin-left: 70%;
 }
 
 .chat-button {
