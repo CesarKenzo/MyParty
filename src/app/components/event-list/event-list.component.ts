@@ -1,32 +1,18 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy  } from '@angular/core';
-
-
-export interface Event {
-  name: string;
-  production: string;
-  rating: number;
-  image: string;
-  description: string;
-  categories: string[];
-}
-
-export interface Categorie {
-  name: string;
-}
-
-export interface Produtor {
-  name: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { Event } from '../event';
+import { EventService } from '../event.service';
+import { Categorie } from '../categorie';
+import { Production } from '../production';
 
 const EVENTS: Event[] = [
-  {name: 'Evento 1', production: 'Produtor 1', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 2', 'Categoria 3']},
-  {name: 'Evento 2', production: 'Produtor 2', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa2.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 4']},
-  {name: 'Evento 3', production: 'Produtor 3', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa3.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 3', 'Categoria 4']},
-  {name: 'Evento 4', production: 'Produtor 4', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa4.jpg', description: 'Descrição do Evento', categories: ['Categoria 3', 'Categoria 5']},
-  {name: 'Evento 5', production: 'Produtor 5', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa5.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 5', 'Categoria 6']},
-  {name: 'Evento 6', production: 'Produtor 6', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa6.jpg', description: 'Descrição do Evento', categories: ['Categoria 4', 'Categoria 5', 'Categoria 6']},
-  {name: 'Evento 7', production: 'Produtor 1', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa7.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 7']},
-  {name: 'Evento 8', production: 'Produtor 2', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa8.jpg', description: 'Descrição do Evento', categories: ['Categoria 5']},
+  {name: 'Evento 1', production: 'Produtor 1', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 2', 'Categoria 3'], features: ''},
+  {name: 'Evento 2', production: 'Produtor 2', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa2.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 4'], features: ''},
+  {name: 'Evento 3', production: 'Produtor 3', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa3.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 3', 'Categoria 4'], features: ''},
+  {name: 'Evento 4', production: 'Produtor 4', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa4.jpg', description: 'Descrição do Evento', categories: ['Categoria 3', 'Categoria 5'],  features: ''},
+  {name: 'Evento 5', production: 'Produtor 5', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa5.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 5', 'Categoria 6'],  features: ''},
+  {name: 'Evento 6', production: 'Produtor 6', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa6.jpg', description: 'Descrição do Evento', categories: ['Categoria 4', 'Categoria 5', 'Categoria 6'],  features: ''},
+  {name: 'Evento 7', production: 'Produtor 1', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa7.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 7'],  features: ''},
+  {name: 'Evento 8', production: 'Produtor 2', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa8.jpg', description: 'Descrição do Evento', categories: ['Categoria 5'],  features: ''},
 ];
 
 const CATEGORIES: Categorie[] = [
@@ -39,7 +25,7 @@ const CATEGORIES: Categorie[] = [
   {name: 'Categoria 7'},
 ];
 
-const PRODUTOR:Produtor[] = [
+const PRODUTOR:Production[] = [
   {name: 'Produtor 1'},
   {name: 'Produtor 2'},
   {name: 'Produtor 3'},
@@ -52,70 +38,29 @@ const PRODUTOR:Produtor[] = [
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default
 })
 export class EventListComponent implements OnInit {
 
   categorieFilter: string = '';
   productionFilter: string = '';
   eventList: Event[] = [];
-  categorieList: Categorie[] = [];
-  produtorList: Produtor[] = [];
+  categorieList: Categorie[] = CATEGORIES;
+  produtorList: Production[] = PRODUTOR;
   panelOpenState = false;
-  tempEventList: Event[] = [];  
+  id: number = 0;
+  listIds: number[] = [];
 
   constructor(
-    private changeDetection: ChangeDetectorRef
+    private service: EventService
   ) {}
 
   ngOnInit(): void {
-    this.eventList = EVENTS
-    this.categorieList = CATEGORIES
-    this.produtorList = PRODUTOR
+    
+    this.service.listar().subscribe((eventList) => {
+      this.eventList = eventList
+    }) 
   }
-
+  
   applyFilter() {
-    this.tempEventList = []
-    if(this.productionFilter != 'None') {
-      for(var i = 0; i < this.eventList.length; i++) {
-        var event = this.eventList[i]
-        if(event.production == this.productionFilter) {
-          this.tempEventList.push(event)
-        }
-      }
-      this.eventList = this.tempEventList
-    }
-
-    if(this.categorieFilter != 'None') {
-      for(var i = 0; i < this.eventList.length; i++) {
-        var event = this.eventList[i]
-        for(var j = 0; j < event.categories.length; j++) {
-          var categorie = event.categories[j]
-          if(categorie == this.categorieFilter) {
-            this.tempEventList.push(event)
-          }
-        }
-      }
-      this.eventList = this.tempEventList
-    }
-
-    this.changeDetection.detectChanges();
-  }
-
-  fromCategorie(event: Event) {
-    for(var i = 0; i < event.categories.length; i++) {
-      var categorie = event.categories[i] 
-      return categorie == this.categorieFilter
-    }
-
-    return false
-  }
-
-  fromProduction(event: Event) {
-    if(this.productionFilter != 'None') {
-      return event.production == this.productionFilter
-    }
-
-    return false
   }
 }

@@ -37,7 +37,6 @@
                 <br/>
                 <br/>
                 <br/>
-                <br/>
             </mat-card-content>
             <mat-chip-list style="margin-left: 5%;">
                 <mat-chip *ngFor="let categorie of event.categories" class="tag-chip">{{categorie}}</mat-chip>
@@ -47,10 +46,14 @@
         <mat-card style="background-color: #4169e14d">
             <mat-card-title title="Descrição">O que tem no Evento:</mat-card-title>
             <mat-card-content>
-                - Atração 1 <br/>
-                - Atração 2 <br/>
-                - Atração 3 <br/>
-                - Atração 4 <br/>
+                {{event.features.split('\n')[0]}}
+                <br/>
+                {{event.features.split('\n')[1]}}
+                <br/>
+                {{event.features.split('\n')[2]}}
+                <br/>
+                {{event.features.split('\n')[3]}}
+                <br/>
             </mat-card-content>
         </mat-card>
         <br/><br/>

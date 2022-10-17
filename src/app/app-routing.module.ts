@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'event',
+    path: 'event/:id',
     component: EventPageComponent
   },
   {

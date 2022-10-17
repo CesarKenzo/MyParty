@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatChipsModule} from '@angular/material/chips';
@@ -38,7 +39,7 @@ import { EventListComponent } from './components/event-list/event-list.component
     EventPageComponent,
     ShopPageComponent,
     MarketplaceComponent,
-    EventListComponent
+    EventListComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +63,7 @@ import { EventListComponent } from './components/event-list/event-list.component
     MatTableModule,
     NgbModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
