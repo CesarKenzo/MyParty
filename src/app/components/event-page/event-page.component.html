@@ -4,7 +4,7 @@
     <div>
         <mat-card style="background-color: #FFF; border-color: #4169e14d;">
             <mat-card-title title="review">
-                <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event.name}}
+                <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event.name}} 
                 <ngb-rating [max]="5" [(rate)]="event.rating" [readonly]="true" style="float: right"></ngb-rating>
             </mat-card-title>
         </mat-card>
@@ -109,33 +109,23 @@
                         <mat-card-subtitle>Compre seu Ingresso!</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <mat-card class="ingresso-card">
-                            <mat-card-header>
-                                <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
-                                <mat-card-title>Ingresso 1</mat-card-title>
-                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>
-                                <p>
-                                    Descrição:  
-                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
-                                </p>
-                            </mat-card-content>
-                        </mat-card>
+                        <div *ngFor="let ticket of ticketList">
+                            <mat-card class="ingresso-card" >
+                                <mat-card-header>
+                                    <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
+                                    <mat-card-title>{{ticket.name}}</mat-card-title>
+                                    <mat-card-subtitle>{{ticket.type}}</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <p>
+                                        Ingressos Disponíveis: {{ticket.available}}  
+                                        <input style="float: right; text-align: end;" value= {{ticket.value}} readonly/>
+                                    </p>
+                                </mat-card-content>
+                            </mat-card>
+                            <br/>
+                        </div>
                         <br/>
-                        <mat-card class="ingresso-card">
-                            <mat-card-header>
-                                <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
-                                <mat-card-title>Ingresso 2</mat-card-title>
-                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>
-                                <p>
-                                    Descrição:  
-                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
-                                </p>
-                            </mat-card-content>
-                        </mat-card>
                     </mat-card-content>
                     <mat-card-actions style="text-align: center;">
                         <button mat-button routerLink="/shop">Comprar</button>
