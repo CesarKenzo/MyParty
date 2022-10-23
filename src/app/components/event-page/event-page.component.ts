@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router , ActivatedRoute} from '@angular/router';
 import { Event } from '../event';
 import { EventService } from '../event.service';
+import { Ticket } from '../ticket';
+import { TicketService } from '../ticket.service';
 
 @Component({
   selector: 'app-event-page',
@@ -22,6 +24,9 @@ export class EventPageComponent implements OnInit {
     features: ''
   }
 
+  ticketList: Ticket[] = [];
+  tempTicketList: Ticket[] = [];
+
   rating_comment1 = 4;
   rating_comment2 = 5;
   rating_comment3 = 4;
@@ -29,14 +34,35 @@ export class EventPageComponent implements OnInit {
   constructor(
     private service: EventService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private ticketService: TicketService
   ) { }
 
   ngOnInit(): void {
+    this.tempTicketList = []
+    this.ticketList = []
+
     const id = this.route.snapshot.paramMap.get('id')
     this.service.buscarPorId(parseInt(id!)).subscribe((event) => {
       this.event = event
     })
+
+    this.listTickets()
   }
 
+  listTickets() {
+    this.ticketService.listar().subscribe((ticketList) => {
+      this.ticketList = ticketList
+
+      const id = this.route.snapshot.paramMap.get('id')
+      for(var i = 0; i < this.ticketList.length ; i++) {
+        let t = this.ticketList[i]
+        if(t.eventId == parseInt(id!)) {
+          this.tempTicketList.push(t)
+        }
+      }
+
+      this.ticketList = this.tempTicketList
+    })
+  }
 }
