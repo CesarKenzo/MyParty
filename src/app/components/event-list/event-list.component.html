@@ -1,9 +1,9 @@
-<section style="background-color: #D0D0D0;">
+<section style="background-color: #FFF;">
   <section class="container">
     <tr><br/></tr>
     <mat-accordion>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel hideToggle class="filter-accordion">
+        <mat-expansion-panel-header class="filter-accordion">
           <mat-panel-title>
             Filtros
           </mat-panel-title>
@@ -11,6 +11,7 @@
             Filtros para os eventos
           </mat-panel-description>
         </mat-expansion-panel-header>
+        <tr><br/></tr>
         <mat-form-field appearance="fill" class="filter">
           <mat-label>Categorias</mat-label>
           <mat-select matNativeControl [(ngModel)]="categorieFilter">
@@ -26,9 +27,9 @@
           </mat-select>
         </mat-form-field>
         <br/>
-        <button mat-button style="left: 2%;" (click)="applyFilterCategory()">Filtrar Por Categoria</button>
-        <button mat-button style="left: 2%;" (click)="applyFilterProduction()">Filtrar Por Produtor</button>
-        <button mat-button style="left: 2%;" (click)="listEvents()">Limpar Filtros</button>
+        <button mat-button class="filter-button" (click)="applyFilterCategory()">Filtrar Por Categoria</button>
+        <button mat-button class="filter-button" (click)="applyFilterProduction()">Filtrar Por Produtor</button>
+        <button mat-button class="filter-button" (click)="listEvents()">Limpar Filtros</button>
       </mat-expansion-panel>
     </mat-accordion>
 
@@ -37,7 +38,7 @@
       <div class="row">
         <mat-card class="example-card">
           <mat-card-title-group>
-            <img mat-card-xl-image src="{{event.image}}">
+            <img mat-card-lg-image src="{{event.image}}">
             <mat-card-title routerLink="/event/{{event.id}}">{{event.name}}</mat-card-title>
             <mat-card-subtitle>{{event.production}}</mat-card-subtitle>
           </mat-card-title-group>
@@ -53,5 +54,7 @@
       </div>
       <tr><br/></tr>
     </div>
+    <tr><br/></tr>
+    <tr><br/></tr>
   </section>
 </section>

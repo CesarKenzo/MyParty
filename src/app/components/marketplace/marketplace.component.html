@@ -1,9 +1,9 @@
-<section style="background-color: #D0D0D0;">
+<section style="background-color: #FFF;">
     <section class="container">
         <tr><br/></tr>
         <mat-accordion class="tab-filtro" multi>
-            <mat-expansion-panel>
-            <mat-expansion-panel-header>
+            <mat-expansion-panel class="filter-accordion">
+            <mat-expansion-panel-header class="filter-accordion">
                 <mat-panel-title>
                 Filtros
                 </mat-panel-title>
@@ -12,6 +12,7 @@
                 <mat-icon>filter_list</mat-icon>
                 </mat-panel-description>
             </mat-expansion-panel-header>
+            <tr><br/></tr>
             <mat-form-field appearance="fill">
                 <mat-label>Nome do Evento</mat-label>
                 <input matInput>
@@ -161,5 +162,9 @@
             </mat-card>
         </div>
         <tr><br/></tr>
+        <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
     </section>
 </section>
