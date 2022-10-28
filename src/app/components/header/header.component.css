@@ -17,10 +17,11 @@
 
 #menu-h{
     background-color: #444444;
+    align-items: center;
 }
 
 #menu-h ul {
-    max-width: 1000px;
+    max-width: 100%;
     list-style: none;
     padding: 0;
 }
@@ -74,7 +75,7 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 .button_login {
-    background-color: #4169E1; 
+    background-color: slateblue; 
     border: none;
     color: white;
     padding: 10px;
@@ -101,12 +102,4 @@
     cursor: pointer;
     border-radius: 12px;
     float: right;
-}
-
-.search_field {
-    width: 450px;
-    height: 50px;
-    position: absolute;
-    align-items: center;
-    background-color: #FFF;
 }

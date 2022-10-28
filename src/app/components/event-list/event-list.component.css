@@ -38,3 +38,13 @@
 .filter {
     margin-left: 2%;
 }
+
+.filter-button {
+    margin-left: 2%; 
+    background-color: slateblue; 
+    color: #FFF;
+}
+
+.filter-accordion {
+    background-color: #4169e14d;
+}

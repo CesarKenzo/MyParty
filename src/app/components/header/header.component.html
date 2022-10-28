@@ -4,7 +4,7 @@
       rel="stylesheet">
     <nav id="menu-h">
         <ul>
-            <button style="background-color: #444444; border: #444444; text-align: left;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <button style="background-color: #444444; border: #444444; margin-bottom: 1%; margin-top: 1%; align-self: center;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon class="material-icons md-light">menu</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
@@ -31,28 +31,21 @@
             </mat-menu>
               
             <li>
-                <a href="index.html">
+                <a href="index.html" style="align-content: center; margin-left: 3%;">
                     <h1 class="logo_title">My Party</h1>
                 </a>
             </li>
             <li> </li><li> </li>
             <li>
-                <mat-form-field class="search_field" appearance="fill">
-                    <mat-label>Pesquisar</mat-label>
-                    <mat-icon matPrefix>search</mat-icon>
-                    <input matInput type="text">
-                </mat-form-field>
-            </li>
-            <li>
-                <button mat-mini-fab style="left: 470px; bottom: 4px; background-color: transparent">
+                <button mat-mini-fab style="left: 67%; bottom: 4px; background-color: slateblue">
                     <mat-icon>chat</mat-icon>
                 </button>
-                <button mat-mini-fab style="left: 490px; bottom: 4px; background-color: transparent">
+                <button mat-mini-fab style="left: 68%; bottom: 4px; background-color: slateblue">
                     <mat-icon>notifications</mat-icon>
                 </button>
             </li>
-            <button class="button_login">Login</button>
-            <button class="button_signUp">Sign Up</button>
+            <button class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%; margin-right: 2%;">Login</button>
+            <button class="button_signUp" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;">Sign Up</button>
         </ul>
     </nav>
 </header>

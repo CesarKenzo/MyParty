@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketplaceComponent implements OnInit {
 
+  pageSize = 10;
+
   constructor() { }
 
   ngOnInit(): void {
