@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router , ActivatedRoute} from '@angular/router';
-import { Event } from '../event';
-import { EventService } from '../event.service';
-import { Ticket } from '../ticket';
-import { TicketService } from '../ticket.service';
+import { Event } from '../model/event';
+import { EventService } from '../service/event.service';
+import { Ticket } from '../model/ticket';
+import { TicketService } from '../service/ticket.service';
 
 @Component({
   selector: 'app-event-page',
