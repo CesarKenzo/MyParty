@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from '../event';
-import { EventService } from '../event.service';
-import { Categorie } from '../categorie';
-import { Production } from '../production';
+import { Event } from '../model/event';
+import { EventService } from '../service/event.service';
+import { Categorie } from '../model/categorie';
+import { Production } from '../model/production';
 import { subscribeOn } from 'rxjs';
 
 const EVENTS: Event[] = [
