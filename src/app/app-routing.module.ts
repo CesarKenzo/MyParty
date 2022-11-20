@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'shop', 
     component: ShopPageComponent
-  }, 
+  },
+  {
+    path: 'shop/:id', 
+    component: ShopPageComponent
+  },  
   {
     path: 'marketplace',
     component: MarketplaceComponent

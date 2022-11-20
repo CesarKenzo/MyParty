@@ -5,8 +5,8 @@
         <ng-template matStepLabel>Step 1</ng-template>
         <ng-template matStepContent>
           <mat-selection-list #ticket [multiple]="false">
-            <mat-list-option *ngFor="let ticket of typesOfTicket" [value]="ticket">
-              {{ticket}}
+            <mat-list-option *ngFor="let ticket of ticketList" [value]="ticket">
+              {{ticket.name}}
             </mat-list-option>
           </mat-selection-list>
           <br/><br/>
@@ -14,10 +14,10 @@
             <mat-card class="card-ingresso">
               <mat-card-content>
                 <p>
-                  Opção Selecionada: {{ticket.selectedOptions.selected[0]?.value}}
+                  Opção Selecionada: {{ticket.selectedOptions.selected[0]?.value.name}}
                 </p>
                 <p>
-                  Valor: $$$
+                  Valor: $ {{ticket.selectedOptions.selected[0]?.value.value}}
                 </p>
               </mat-card-content>
             </mat-card>
