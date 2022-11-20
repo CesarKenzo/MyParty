@@ -42,8 +42,8 @@ const PRODUTOR:Production[] = [
 })
 export class EventListComponent implements OnInit {
 
-  categorieFilter: string | undefined;
-  productionFilter: string | undefined;;
+  categorieFilter: string = 'None';
+  productionFilter: string = 'None';
   eventList: Event[] = [];
   categorieList: Categorie[] = CATEGORIES;
   produtorList: Production[] = PRODUTOR;
@@ -60,6 +60,16 @@ export class EventListComponent implements OnInit {
     this.listEvents()
   }
   
+  applyFilter() {
+    if(this.categorieFilter != 'None' || this.categorieFilter != null || this.categorieFilter == undefined) {
+      this.applyFilterCategory();
+    }
+
+    if(this.productionFilter != 'None' || this.productionFilter != null || this.productionFilter == undefined) {
+      this.applyFilterProduction();
+    } 
+  }
+
   applyFilterCategory() {
     let tempEventList = []
 
@@ -74,9 +84,7 @@ export class EventListComponent implements OnInit {
         }
       }
       this.eventList = tempEventList
-    } else {
-      this.listEvents()
-    }    
+    }  
   }
 
   applyFilterProduction(){
@@ -90,9 +98,7 @@ export class EventListComponent implements OnInit {
         }
       }
       this.eventList = tempEventList
-    } else {
-      this.listEvents()
-    }
+    } 
   }
 
   listEvents() {
