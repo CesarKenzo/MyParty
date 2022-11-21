@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import { Router } from '@angular/router'
@@ -12,7 +13,7 @@ import { UserService } from '../service/user.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  durationInSeconds = 5;
+  durationInSeconds = 3;
 
   login: Login = {
     login: '',
@@ -21,15 +22,6 @@ export class LoginPageComponent implements OnInit {
 
   userList: User[] = [];
 
-  user: User = {
-    id: 0,
-    name: '',
-    username: '',
-    password: '',
-    profile: '',
-    description: ''
-  }
-
   constructor(
     private userService: UserService,
     private router: Router,
@@ -37,23 +29,27 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.list().subscribe((userList) => {
-      this.userList = userList
-    }) 
+    this.listUsers(); 
   }
 
   userLogin() {
+    let flUser = false
     for(var x = 0; x < this.userList.length; x++) {
       let e = this.userList[x]
-      if(this.login.login != null && this.login.login?.length != 0) {
+      if(this.login.login != null && this.login.login.length != 0) {
         if(e.username == this.login.login && e.password == this.login.password) {
-          this.router.navigate(['/event-list'])
-          this.userService.usuarioLogado = this.user;
-        } else {
-          this.router.navigate(['/login'])
-          this.openSnackBar()
-        }
+          this.userService.usuarioLogado = e;
+          flUser = true
+          break
+        } 
       }
+    }
+
+    if(flUser) {
+      this.router.navigate(['/event-list'])
+    } else {
+      this.router.navigate(['/login'])
+      this.openSnackBar()
     }
   }
 
@@ -61,6 +57,12 @@ export class LoginPageComponent implements OnInit {
     this._snackBar.openFromComponent(LoginResponseComponent, {
       duration: this.durationInSeconds * 1000,
     });
+  }
+
+  listUsers() {
+    this.userService.list().subscribe((userList) => {
+      this.userList = userList
+    }) 
   }
 }
 

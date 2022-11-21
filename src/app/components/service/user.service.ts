@@ -42,7 +42,7 @@ export class UserService {
 
   save(record: User) {
     console.log(record);
-    return this.httpClient.post<User>(this.API, record).pipe(first());
+    return this.httpClient.post<User>(this.API, record);
   }
 
   list(): Observable<User[]> {
