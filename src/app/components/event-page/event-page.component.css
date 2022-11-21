@@ -45,3 +45,7 @@
 .tag-chip {
     background-color: #FFF;
 }
+
+.example-card {
+    max-width: 25vw;
+}

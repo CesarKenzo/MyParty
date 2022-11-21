@@ -1,0 +1,22 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+  
+.botao {
+    margin: 5px;
+    margin-top: 70px;
+    width: 200px;
+}

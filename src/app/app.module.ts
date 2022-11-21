@@ -18,6 +18,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
 
@@ -31,6 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShopPageComponent } from './components/shop-page/shop-page.component';
 import { MarketplaceComponent } from './components/marketplace/marketplace.component';
 import { EventListComponent } from './components/event-list/event-list.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { EventListComponent } from './components/event-list/event-list.component
     ShopPageComponent,
     MarketplaceComponent,
     EventListComponent,
+    LoginPageComponent,
+    SignupPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { EventListComponent } from './components/event-list/event-list.component
     MatPaginatorModule,
     MatTableModule,
     MatSelectModule,
+    MatSnackBarModule,
     NgbModule,
     FormsModule,
     HttpClientModule,

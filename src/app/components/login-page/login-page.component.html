@@ -1,0 +1,44 @@
+<section class="container">
+    <br/><br/><br/> 
+    <header>
+        <mat-card  style="background-color: slateblue; color: #FFF;">
+            <mat-card-header>
+                Login
+            </mat-card-header>
+        </mat-card>
+    </header>
+    <br/><br/><br/> 
+    <form>
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Usuário</mat-label>
+              <input matInput
+                type="textarea"
+                class="input"
+                id="login"
+                name="login"
+                placeholder="Usuário"
+                [(ngModel)]="login.login"
+              >
+            </mat-form-field></td>
+        </tr></table>
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input matInput
+                type="textarea"
+                class="input"
+                id="password"
+                name="password"
+                placeholder="Senha"
+                [(ngModel)]="login.password"
+              >
+            </mat-form-field></td>
+        </tr></table>
+
+        <div class="acoes">
+            <button mat-button class="botao" (click)="userLogin()">Logar</button>
+        </div>
+    </form>
+    <br/><br/><br/> 
+</section>
