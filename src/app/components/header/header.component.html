@@ -36,16 +36,11 @@
                 </a>
             </li>
             <li> </li><li> </li>
-            <li>
-                <button mat-mini-fab style="left: 67%; bottom: 4px; background-color: slateblue">
-                    <mat-icon>chat</mat-icon>
-                </button>
-                <button mat-mini-fab style="left: 68%; bottom: 4px; background-color: slateblue">
-                    <mat-icon>notifications</mat-icon>
-                </button>
-            </li>
-            <button class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%; margin-right: 2%;" routerLink="/login">Login</button>
-            <button class="button_signUp" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;" routerLink="/signup">Sign Up</button>
+            
+            <button *ngIf="flUser == false" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%; margin-right: 2%;" routerLink="/login">Login</button>
+            <button *ngIf="flUser == false" class="button_signUp" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;" routerLink="/signup">Sign Up</button>
+            <button *ngIf="flUser == true" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;" (click)="logout()">Logout</button>
+            
         </ul>
     </nav>
 </header>
