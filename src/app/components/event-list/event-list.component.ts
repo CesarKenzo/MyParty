@@ -17,22 +17,17 @@ const EVENTS: Event[] = [
 ];
 
 const CATEGORIES: Categorie[] = [
-  {name: 'Categoria 1', value: 'categoria-1'},
-  {name: 'Categoria 2', value: 'categoria-2'},
-  {name: 'Categoria 3', value: 'categoria-3'},
-  {name: 'Categoria 4', value: 'categoria-4'},
-  {name: 'Categoria 5', value: 'categoria-5'},
-  {name: 'Categoria 6', value: 'categoria-6'},
-  {name: 'Categoria 7', value: 'categoria-7'},
+  {name: 'Festas Universitárias', value: 'categoria-1'},
+  {name: 'Música', value: 'categoria-2'},
+  {name: 'Jogos Universitários', value: 'categoria-3'},
+  {name: 'Música Internacional', value: 'categoria-4'},
+  {name: 'Shows', value: 'categoria-5'},
 ];
 
 const PRODUTOR:Production[] = [
-  {name: 'Produtor 1', value: '1'},
-  {name: 'Produtor 2', value: '2'},
-  {name: 'Produtor 3', value: '3'},
-  {name: 'Produtor 4', value: '4'},
-  {name: 'Produtor 5', value: '5'},
-  {name: 'Produtor 6', value: '6'},
+  {name: 'Comissão de festas EACH-USP', value: '1'},
+  {name: 'Associação Universitária', value: '2'},
+  {name: 'Eventim', value: '3'},
 ];
 
 @Component({
