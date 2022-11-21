@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../service/user.service';
+import { User } from '../model/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  flUser = false
 
-  ngOnInit(): void {
+  user: User = {
+    id: 0,
+    name: '',
+    username: '',
+    password: '',
+    profile: '',
+    description: ''
   }
 
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) { }
+
+  ngOnInit(): void {
+    if(this.userService.usuarioLogado.id != null) {
+      this.user = this.userService.usuarioLogado
+      if(this.user != null && this.user?.id! > 0) {
+        this.flUser = true
+      }
+    }
+  }
+
+  logout() {
+    this.userService.logout()
+    this.router.navigate(['/event-list'])
+    this.flUser = false
+  }
 }
