@@ -46,7 +46,6 @@ export class SignupPageComponent implements OnInit {
       this.router.navigate(['/signup'])
         this.openSnackBar()
     }
-    
   }
 }
 
