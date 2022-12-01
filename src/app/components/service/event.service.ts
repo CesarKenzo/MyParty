@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class EventService {
 
-  private readonly API = 'https://my-party-db.herokuapp.com/events'
-  //private readonly API = 'http://localhost:3000/events'
+  private readonly API = 'http://localhost:3000/events'
+  //private readonly API = 'https://my-party-db.herokuapp.com/events'
 
   constructor(private http: HttpClient) { }
 

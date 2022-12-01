@@ -11,8 +11,8 @@ import { User } from '../model/user';
 })
 export class UserService {
 
-  private readonly API = 'https://my-party-db.herokuapp.com/users';
-  //private readonly API = 'http://localhost:3000/users';
+  //private readonly API = 'https://my-party-db.herokuapp.com/users';
+  private readonly API = 'http://localhost:3000/users';
   private userList: User[] = []; 
   LS_CHAVE: string = "usuarioLogado";
 

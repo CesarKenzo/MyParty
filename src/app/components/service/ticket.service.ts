@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class TicketService {
 
-  private readonly API = 'https://my-party-db.herokuapp.com/tickets'
+  private readonly API = 'http://localhost:3000/tickets'
+  //private readonly API = 'https://my-party-db.herokuapp.com/tickets'
 
   constructor(private http: HttpClient) { }
 
