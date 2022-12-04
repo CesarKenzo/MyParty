@@ -137,4 +137,17 @@ h2 {
     height: 80vh;
     align-self: center;
     border:2px solid black;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.avatar-image {
+    background-size: cover;
+}
+
+.lastEvent {
+    background-color: rgb(210, 210, 210);
+    border:2px solid black;
+    margin-left: 1vw;
+    margin-right: 5.4vw;
 }
