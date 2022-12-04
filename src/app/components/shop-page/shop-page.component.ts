@@ -42,7 +42,8 @@ export class ShopPageComponent implements OnInit {
     image: '',
     description: '',
     categories: [],
-    features: ''
+    features: '',
+    date: new Date()
   }
 
   userTicket: UserTicket = {

@@ -6,5 +6,6 @@ export interface Event {
     image: string,
     description: string,
     categories: string[],
-    features: string
+    features: string, 
+    date: Date
 } 

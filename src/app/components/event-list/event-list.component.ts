@@ -6,17 +6,6 @@ import { Production } from '../model/production';
 import { subscribeOn } from 'rxjs';
 import { CategorieService } from '../service/categorie.service';
 
-const EVENTS: Event[] = [
-  {name: 'Evento 1', production: 'Produtor 1', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 2', 'Categoria 3'], features: ''},
-  {name: 'Evento 2', production: 'Produtor 2', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa2.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 4'], features: ''},
-  {name: 'Evento 3', production: 'Produtor 3', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa3.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 3', 'Categoria 4'], features: ''},
-  {name: 'Evento 4', production: 'Produtor 4', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa4.jpg', description: 'Descrição do Evento', categories: ['Categoria 3', 'Categoria 5'],  features: ''},
-  {name: 'Evento 5', production: 'Produtor 5', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa5.jpg', description: 'Descrição do Evento', categories: ['Categoria 2', 'Categoria 5', 'Categoria 6'],  features: ''},
-  {name: 'Evento 6', production: 'Produtor 6', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa6.jpg', description: 'Descrição do Evento', categories: ['Categoria 4', 'Categoria 5', 'Categoria 6'],  features: ''},
-  {name: 'Evento 7', production: 'Produtor 1', rating: 4, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa7.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 3', 'Categoria 7'],  features: ''},
-  {name: 'Evento 8', production: 'Produtor 2', rating: 3, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa8.jpg', description: 'Descrição do Evento', categories: ['Categoria 5'],  features: ''},
-];
-
 const CATEGORIES: Categorie[] = [
   {name: 'Festas Universitárias', value: 'categoria-1'},
   {name: 'Música', value: 'categoria-2'},
