@@ -46,7 +46,7 @@ export class ProfilePageComponent implements OnInit {
     features: ''
   }
 
-  userTickets: UserTicket[] = []
+  userTicketList: UserTicket[] = []
 
   constructor(
     private userService: UserService,
@@ -62,6 +62,11 @@ export class ProfilePageComponent implements OnInit {
     var userId = sessionStorage.getItem(loggedUserId)
     this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
       this.user = user
+
+      this.userTicketService.listar().subscribe((userTickets) => {
+        this.userTicketList = userTickets.filter(ut => ut.user.id == this.user.id)
+        this.event = this.userTicketList[this.userTicketList.length-1].event
+      })
     })
   }
 
