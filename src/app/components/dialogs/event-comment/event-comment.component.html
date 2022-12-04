@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Comentário</h1>
+<div mat-dialog-content>
+    <form>
+        <ngb-rating [max]="5" [(rate)]="eventComment.score" style="font-size: 25px;"></ngb-rating>
+        <mat-form-field >
+            <mat-label>Descrição</mat-label>
+            <input matInput
+            type="textarea"
+            class="input"
+            id="content"
+            name="content"
+            style="min-height: 200px;"
+            [(ngModel)]="eventComment.content"
+            >
+        </mat-form-field>
+        <br/>
+        <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+            <button mat-raised-button color="primary" (click)="publicar()" class="button" mat-dialog-close>Enviar</button>
+        </div>
+    </form>
+</div>

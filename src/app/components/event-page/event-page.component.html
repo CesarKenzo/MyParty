@@ -131,24 +131,22 @@
         <mat-card-title title="Reviews" style="text-align:center;">Reviews</mat-card-title>
         <mat-tab-group>
             <mat-tab label="Evento"> 
-                <mat-card style="background-color: #4169e14d">
-                    <mat-card-title title="review">
-                        <mat-icon>person</mat-icon>Usuario X: Festa Sensacional! 
-                            <ngb-rating [max]="5" [(rate)]="rating_comment1" [readonly]="true" style="float: right"></ngb-rating>
+                <mat-card style="background-color: #4169e14d" *ngFor="let eventComment of eventCommentList">
+                    <mat-card-title-group>
+                        <mat-card-title>
+                            <mat-icon>person</mat-icon>
+                            {{eventComment.username}}:
                         </mat-card-title>
+                        <ngb-rating [max]="5" [(rate)]="eventComment.score" [readonly]="true" style="float: right; font-size: 20px;"></ngb-rating>
+                    </mat-card-title-group>
                     <mat-card-content>
-                        Comentário ...
+                        {{eventComment.content}}
                     </mat-card-content>
                 </mat-card>
-                <mat-card style="background-color: #4169e14d">
-                    <mat-card-title title="review">
-                        <mat-icon>person</mat-icon>Usuario Y: Boa Organização! 
-                            <ngb-rating [max]="5" [(rate)]="rating_comment2" [readonly]="true" style="float: right"></ngb-rating>
-                    </mat-card-title>
-                    <mat-card-content>
-                        Comentário ...
-                    </mat-card-content>
-                </mat-card>
+                <br/>
+                <div style="text-align: center;">
+                    <button mat-raised-button color="primary" (click)="openEventCommentDialog()" class="button" style="text-align: center;">Comentar sobre o Evento</button>  
+                </div>
             </mat-tab>
             <mat-tab label="Produtor">  
                 <mat-card style="background-color: #4169e14d">
@@ -160,6 +158,10 @@
                         Comentário ...
                     </mat-card-content>
                 </mat-card>
+                <br/>
+                <div style="text-align: center;">
+                    <button mat-raised-button color="primary" (click)="openEventCommentDialog()" class="button" style="text-align: center;">Comentar sobre o Produtor</button>  
+                </div>
             </mat-tab>
         </mat-tab-group>
         <br/><br/>
