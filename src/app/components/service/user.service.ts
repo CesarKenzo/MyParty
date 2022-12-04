@@ -48,4 +48,14 @@ export class UserService {
   list(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.API)
   }
+
+  editarUsuario(record: User): Observable<User> {
+    const url = `${this.API}/${record.id}`;
+    return this.httpClient.put<User>(url, record);
+  }
+
+  buscarPorId(id: number): Observable<User> {
+    const url = `${this.API}/${id}`
+    return this.httpClient.get<User>(url)
+  }
 }

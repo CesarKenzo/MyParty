@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../model/ticket';
 import { TicketService } from '../service/ticket.service';
 import { Router , ActivatedRoute} from '@angular/router';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-shop-page',
@@ -17,13 +18,16 @@ export class ShopPageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private ticketService: TicketService
+    private ticketService: TicketService, 
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
     this.tempTicketList = []
     this.ticketList = []
 
+    if(this.userService.usuarioLogado == null)
+      this.router.navigate(['login'])
     this.listTickets()
   }
 

@@ -1,0 +1,50 @@
+<body>
+    <div class="left-vertical-container">
+        <div class="image-profile">
+            <img src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png" alt="" id="image-profile">
+        </div>
+        <div class="user-name">
+            <h1 id="user-name"> {{ user.name }} </h1>
+        </div>
+        <div class="user-about">
+            <p id="occupation"> {{ user.profile }} </p>
+            <div class="user-about-edit-button">
+                <button mat-stroked-button (click)="openDialog()" color="primary" style="border: 1px solid black; color: black;">
+                    <mat-icon color="primary" style="color: black;">edit</mat-icon> Editar
+                </button>
+            </div>
+            <ul id="categories">
+                <li>Festas Universitárias</li>
+                <li>Música</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="right-vertical-container">
+        <div>
+            <h2>Último Evento</h2>
+            <mat-card>
+                <mat-card-content>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Evento</mat-panel-title>
+                            </mat-expansion-panel-header>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <br/>
+        <h2>Atalho</h2>
+        <button mat-button (click)="openTranslation()" class="shorcut-button">
+            <mat-icon class="user-data-icon">event</mat-icon>Eventos Favoritos
+        </button>
+        <button mat-button (click)="openExplanation()" class="shorcut-button">
+            <mat-icon class="user-data-icon">category</mat-icon>Categorias Favoritas
+        </button>
+        <button mat-button (click)="openPosts()" class="shorcut-button">
+            <mat-icon class="user-data-icon">confirmation_number</mat-icon>Ingressos
+        </button>       
+    </div>
+</body>
