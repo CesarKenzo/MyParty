@@ -15,3 +15,15 @@ h1{
 .selectBox {
     text-align: center;
 }
+
+.ticketValue {
+    float: right;
+}
+
+.ticketCard {
+    height: 10vh;
+}
+
+.ticket {
+    background-color: rgb(210, 210, 210);
+}

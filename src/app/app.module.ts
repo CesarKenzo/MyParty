@@ -36,6 +36,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { EditProfileComponent } from './components/dialogs/edit-profile/edit-profile.component';
+import { UserTicketsComponent } from './components/dialogs/user-tickets/user-tickets.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EditProfileComponent } from './components/dialogs/edit-profile/edit-pro
     LoginPageComponent,
     SignupPageComponent,
     ProfilePageComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    UserTicketsComponent,
   ],
   imports: [
     BrowserModule,
