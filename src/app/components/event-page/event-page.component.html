@@ -3,29 +3,27 @@
     <br/><br/><br/> 
     <div>
         <mat-card style="background-color: slateblue; color: #FFF;">
-            <mat-card-title title="review">
-                <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event.name}} 
-                <ngb-rating [max]="5" [(rate)]="event.rating" [readonly]="true" style="float: right"></ngb-rating>
-            </mat-card-title>
+            <mat-card-title-group title="review">         
+                <mat-card-title>   
+                    <mat-icon>celebration</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event.name}}
+                    <button mat-mini-fab style="background-color: transparent; margin-left: 51vw;" (click)="setFavorite()"><mat-icon>star</mat-icon></button>   
+                </mat-card-title>
+                <mat-card-subtitle style="font-size: 20px;">
+                    <ngb-rating [max]="5" [(rate)]="event.rating" [readonly]="true" style="margin-left: 3vw;"></ngb-rating>
+                </mat-card-subtitle>                
+            </mat-card-title-group>
         </mat-card>
     </div>
     <br/>
     <div class="row">
-        <div class="column">
+        <div class="column_event_image_side"></div>
+        <div class="column_event_image">
             <mat-card class="example-card">
-                <mat-card-header> </mat-card-header>
-                <img mat-card-image src="{{event.image}}" alt="Foto da Festa 1">
+                <mat-card-header></mat-card-header>
+                <img mat-card-image src="{{event.image}}" alt="Foto da Festa 1" style="align-items: center;">
             </mat-card>
         </div>
-        <div class="column">
-            <mat-card class="example-card">
-                <mat-card-header> </mat-card-header>
-                <img mat-card-image src="https://magaluteste.blob.core.windows.net/container-myparty/Mapa_de_Mentira.png" alt="Foto da Festa 1">
-                <mat-card-footer>
-                    Localização: (Rua Número ...)
-                </mat-card-footer>
-            </mat-card>
-        </div>
+        <div class="column_event_image_side"></div>
     </div>
     <br/>
     <section id="cardDesc">

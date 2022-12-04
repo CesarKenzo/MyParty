@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { loggedUserId } from 'src/app/global-variables';
 import { Categorie } from '../../model/categorie';
 import { User } from '../../model/user';
 import { CategorieService } from '../../service/categorie.service';
@@ -32,9 +33,12 @@ export class EditProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user = this.userService.usuarioLogado
     if(this.userService.usuarioLogado == null) this.router.navigate(['login'])
 
+    var userId = sessionStorage.getItem(loggedUserId)
+    this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
+      this.user = user
+    })
     this.listCategories()
   }
 

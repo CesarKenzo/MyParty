@@ -31,10 +31,15 @@
                 </a>
             </li>
             <li> </li><li> </li>
-            
-            <button *ngIf="flUser == false" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%; margin-right: 2%;" routerLink="/login">Login</button>
-            <button *ngIf="flUser == false" class="button_signUp" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;" routerLink="/signup">Sign Up</button>
-            <button *ngIf="flUser == true" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 2%;" (click)="logout()">Logout</button>
+                        
+            <button *ngIf="!flUser" class="button_signUp" style="margin-bottom: 1%; margin-top: 1%; margin-left: 75%;" routerLink="/signup">Sign Up</button>
+            <button *ngIf="!flUser" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%;" routerLink="/login">Login</button>
+            <button *ngIf="flUser" mat-mini-fab style="margin-bottom: 1%; margin-top: 1%; margin-left: 75%; background-color: white;" routerLink="/profile">
+                <mat-icon style="color: black;">
+                    account_circle
+                </mat-icon>
+            </button>
+            <button *ngIf="flUser" class="button_login" style="margin-bottom: 1%; margin-top: 1%; margin-left: 1%;" (click)="logout()">Logout</button>
             
         </ul>
     </nav>

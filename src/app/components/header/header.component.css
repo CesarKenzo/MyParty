@@ -86,7 +86,6 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-    float: right;
 }
 
 .button_signUp {
@@ -101,5 +100,4 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-    float: right;
 }

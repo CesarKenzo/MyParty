@@ -32,7 +32,7 @@ export class UserTicketsComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.userService.usuarioLogado == null)
-    this.router.navigate(['login'])
+      this.router.navigate(['login'])
     
     var userId = sessionStorage.getItem(loggedUserId)
     this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
@@ -42,8 +42,6 @@ export class UserTicketsComponent implements OnInit {
         this.userTicketList = userTickets.filter(ut => ut.user.id == this.user.id)
       })
     })
-    //this.getUser()
-    //this.getUserTickets()
   }
 
   getUser() {
