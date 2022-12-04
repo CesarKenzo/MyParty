@@ -4,6 +4,7 @@ import { EventService } from '../service/event.service';
 import { Categorie } from '../model/categorie';
 import { Production } from '../model/production';
 import { subscribeOn } from 'rxjs';
+import { CategorieService } from '../service/categorie.service';
 
 const EVENTS: Event[] = [
   {name: 'Evento 1', production: 'Produtor 1', rating: 5, image: 'https://magaluteste.blob.core.windows.net/container-myparty/Festa1.jpg', description: 'Descrição do Evento', categories: ['Categoria 1', 'Categoria 2', 'Categoria 3'], features: ''},
@@ -40,7 +41,7 @@ export class EventListComponent implements OnInit {
   categorieFilter: string = 'None';
   productionFilter: string = 'None';
   eventList: Event[] = [];
-  categorieList: Categorie[] = CATEGORIES;
+  categorieList: Categorie[] = [];
   produtorList: Production[] = PRODUTOR;
   panelOpenState = false;
   id: number = 0;
@@ -48,11 +49,13 @@ export class EventListComponent implements OnInit {
   tempEventList: Event[] = []
 
   constructor(
-    private service: EventService
+    private service: EventService,
+    private categorieService: CategorieService
   ) {}
 
   ngOnInit(): void {
     this.listEvents()
+    this.listCategories()
   }
   
   applyFilter() {
@@ -99,6 +102,12 @@ export class EventListComponent implements OnInit {
   listEvents() {
     this.service.listar().subscribe((eventList) => {
       this.eventList = eventList
+    }) 
+  }
+
+  listCategories() {
+    this.categorieService.listar().subscribe((categorieList) => {
+      this.categorieList = categorieList
     }) 
   }
 }

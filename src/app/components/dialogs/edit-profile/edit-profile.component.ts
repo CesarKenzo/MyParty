@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Categorie } from '../../model/categorie';
 import { User } from '../../model/user';
+import { CategorieService } from '../../service/categorie.service';
 import { UserService } from '../../service/user.service';
 
 @Component({
@@ -16,11 +18,15 @@ export class EditProfileComponent implements OnInit {
     username: '',
     password: '', 
     profile: '', 
-    description: '' 
+    description: '',
+    favoriteCategories: [] 
   }
+
+  categorieList: Categorie[] = []
 
   constructor(
     private userService: UserService, 
+    private categorieService: CategorieService,
     private router: Router,
     private snackBar: MatSnackBar
   ) { }
@@ -28,6 +34,8 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.userService.usuarioLogado
     if(this.userService.usuarioLogado == null) this.router.navigate(['login'])
+
+    this.listCategories()
   }
 
   public onSuccess() {
@@ -40,5 +48,11 @@ export class EditProfileComponent implements OnInit {
 
   public onError() {
     this.snackBar.open('Erro ao Adicionar Descrição.', '', { duration: 3000 });
+  }
+
+  private listCategories() {
+    this.categorieService.listar().subscribe((categorieList) => {
+      this.categorieList = categorieList
+    }) 
   }
 }
