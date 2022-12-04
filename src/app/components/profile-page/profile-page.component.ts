@@ -11,6 +11,7 @@ import { Event } from '../model/event';
 import { UserTicketService } from '../service/user_ticket.service';
 import { UserTicketsComponent } from '../dialogs/user-tickets/user-tickets.component';
 import { UserFavoriteEventsComponent } from '../dialogs/user-favorite-events/user-favorite-events.component';
+import { FavoriteCategoriesComponent } from '../dialogs/favorite-categories/favorite-categories.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -75,7 +76,15 @@ export class ProfilePageComponent implements OnInit {
     }); 
   }
 
-  openExplanation() {
+  openCategories() {
+    const dialogRef = this.dialog.open(FavoriteCategoriesComponent, {
+      width: '40vw',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.userService.usuarioLogado = this.user
+      console.log('dialog fechado!' + result);
+      this.router.navigate(['profile'])
+    }); 
   }
 
   openTickets() {

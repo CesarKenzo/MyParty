@@ -13,9 +13,6 @@
                     <mat-icon color="primary" style="color: black;">edit</mat-icon> Editar
                 </button>
             </div>
-            <ul id="categories">
-                <li *ngFor="let categorie of user.favoriteCategories">{{categorie}}</li>
-            </ul>
         </div>
     </div>
     <br/>
@@ -39,7 +36,7 @@
         <button mat-button (click)="openEvents()" class="shorcut-button">
             <mat-icon class="user-data-icon">event</mat-icon>Eventos Favoritos
         </button>
-        <button mat-button (click)="openExplanation()" class="shorcut-button">
+        <button mat-button (click)="openCategories()" class="shorcut-button">
             <mat-icon class="user-data-icon">category</mat-icon>Categorias Favoritas
         </button>
         <button mat-button (click)="openTickets()" class="shorcut-button">
