@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Seus Ingressos</h1>
+<div mat-dialog-content>
+    <div *ngFor="let userTicket of userTicketList">
+        <mat-accordion>
+            <mat-expansion-panel  class="ticket">
+                <mat-expansion-panel-header>
+                    <mat-panel-title><mat-icon>confirmation_number</mat-icon>&nbsp;&nbsp;{{userTicket.ticket.name}}</mat-panel-title>
+                    <mat-panel-description>{{userTicket.event.name}}</mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-card class="ticketCard">
+                    <mat-card-title-group>
+                        <mat-card-subtitle>Valor: &nbsp;&nbsp;${{userTicket.ticket.value}}</mat-card-subtitle>
+                        <mat-card-subtitle>Tipo do Ingresso: &nbsp;&nbsp;{{userTicket.ticket.type}}</mat-card-subtitle>
+                    </mat-card-title-group>
+                </mat-card>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <br/><br/>
+    </div>   
+</div>
+<div class="button" mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+</div>

@@ -42,8 +42,16 @@
         <button mat-button (click)="openExplanation()" class="shorcut-button">
             <mat-icon class="user-data-icon">category</mat-icon>Categorias Favoritas
         </button>
-        <button mat-button (click)="openPosts()" class="shorcut-button">
+        <button mat-button (click)="openTickets()" class="shorcut-button">
             <mat-icon class="user-data-icon">confirmation_number</mat-icon>Ingressos
-        </button>       
+        </button>
+        <div *ngFor="let userTicket of userTickets">
+            {{userTicket.ticket.name}}
+            <br/>
+            {{userTicket.event.name}}
+            <br/>
+            {{userTicket.user.name}}
+        </div>  
     </div>
+    
 </body>
