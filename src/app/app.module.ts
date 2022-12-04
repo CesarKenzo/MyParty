@@ -37,6 +37,7 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { EditProfileComponent } from './components/dialogs/edit-profile/edit-profile.component';
 import { UserTicketsComponent } from './components/dialogs/user-tickets/user-tickets.component';
+import { UserFavoriteEventsComponent } from './components/dialogs/user-favorite-events/user-favorite-events.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { UserTicketsComponent } from './components/dialogs/user-tickets/user-tic
     ProfilePageComponent,
     EditProfileComponent,
     UserTicketsComponent,
+    UserFavoriteEventsComponent,
   ],
   imports: [
     BrowserModule,
