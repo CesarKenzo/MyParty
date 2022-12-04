@@ -72,7 +72,7 @@ export class EventPageComponent implements OnInit {
 
         var favoriteEvents:number[] = []
         if(this.user.favoriteEvents?.includes(this.event.id!)) {
-          favoriteEvents = this.user.favoriteEvents.filter( fe => fe != this.event.id)
+          favoriteEvents = this.user.favoriteEvents.filter(fe => fe != this.event.id)
           this.user.favoriteEvents = favoriteEvents
           this.flFavoriteAdd = false
         }

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Suas Categorias Favoritas</h1>
+<div mat-dialog-content>
+    <mat-card>
+        <div *ngFor="let categorie of user.favoriteCategories">
+            <li>{{categorie}}</li>
+        </div>
+    </mat-card>
+    <br/><br/>
+</div>
+<div class="button" mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+</div>
