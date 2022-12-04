@@ -4,6 +4,16 @@
     <mat-label>Descrição</mat-label>
     <textarea matInput [(ngModel)]="user.profile" #desc></textarea>
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Categorias Favoritas</mat-label><br/>
+    <mat-select multiple matInput [(ngModel)]="user.favoriteCategories" #desc>
+      <mat-option *ngFor="let categorie of categorieList" value="{{categorie.name}}">
+        {{categorie.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    
+
 </div>
 <div class="button" mat-dialog-actions>
   <button class="send" mat-raised-button (click)="onSuccess()" color="primary" mat-dialog-close>Salvar</button>

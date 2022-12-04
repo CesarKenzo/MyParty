@@ -3,6 +3,10 @@ body {
     background-color: #c4d4dc;
 }
 
+h2 {
+    text-align: center;
+}
+
 /* LEFT */
 
 .left-vertical-container {
