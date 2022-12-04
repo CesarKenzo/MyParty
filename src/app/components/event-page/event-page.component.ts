@@ -62,22 +62,21 @@ export class EventPageComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.buscarPorId(parseInt(id!)).subscribe((event) => {
       this.event = event
+
+      if(this.userService.usuarioLogado.id != null) {
+        var userId = sessionStorage.getItem(loggedUserId)
+        this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
+          this.user = user
+  
+          if(this.user.favoriteEvents?.includes(this.event.id!)) {
+            this.flFavoriteAdd = false
+          }
+        })
+      }
     })
     this.listTickets()
 
-    if(this.userService.usuarioLogado.id != null) {
-      var userId = sessionStorage.getItem(loggedUserId)
-      this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
-        this.user = user
-
-        var favoriteEvents:number[] = []
-        if(this.user.favoriteEvents?.includes(this.event.id!)) {
-          favoriteEvents = this.user.favoriteEvents.filter(fe => fe != this.event.id)
-          this.user.favoriteEvents = favoriteEvents
-          this.flFavoriteAdd = false
-        }
-      })
-    }
+    
   }
 
   listTickets() {
@@ -101,10 +100,8 @@ export class EventPageComponent implements OnInit {
       var favoriteEvents:number[] = this.user.favoriteEvents!
       if(this.user.favoriteEvents?.includes(this.event.id!)) {
         favoriteEvents = this.user.favoriteEvents.filter(fe => fe != this.event.id)
-        this.user.favoriteEvents = favoriteEvents
         this.flFavoriteAdd = false
       } else {
-        this.user.favoriteEvents = favoriteEvents
         favoriteEvents.push(this.event.id!)
         this.flFavoriteAdd = true
       }
