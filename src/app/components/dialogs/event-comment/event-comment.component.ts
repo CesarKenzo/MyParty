@@ -37,7 +37,11 @@ export class EventCommentComponent implements OnInit {
     this.eventComment.username = sessionStorage.getItem(loggedUsername)!
 
     this.eventCommentService.salvar(this.eventComment).subscribe((retorno) => {
-      if(retorno) this.snackBar.open('Comentário Salvo com Sucesso!', '', {duration: 3000});
+      if(retorno) {
+        sessionStorage.removeItem(eventId)
+        sessionStorage.removeItem(eventName)
+        this.snackBar.open('Comentário Salvo com Sucesso!', '', {duration: 3000});
+      }
       else this.onError();
     })
   }

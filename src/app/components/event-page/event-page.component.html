@@ -149,18 +149,21 @@
                 </div>
             </mat-tab>
             <mat-tab label="Produtor">  
-                <mat-card style="background-color: #4169e14d">
-                    <mat-card-title title="review">
-                        <mat-icon>person</mat-icon>Usuario Z: Ótima Produção!
-                    <ngb-rating [max]="5" [(rate)]="rating_comment3" [readonly]="true" style="float: right"></ngb-rating>
-                    </mat-card-title>
+                <mat-card style="background-color: #4169e14d" *ngFor="let productionComment of productionCommentList">
+                    <mat-card-title-group>
+                        <mat-card-title>
+                            <mat-icon>person</mat-icon>
+                            {{productionComment.username}}:
+                        </mat-card-title>
+                        <ngb-rating [max]="5" [(rate)]="productionComment.score" [readonly]="true" style="float: right; font-size: 20px;"></ngb-rating>
+                    </mat-card-title-group>
                     <mat-card-content>
-                        Comentário ...
+                        {{productionComment.content}}
                     </mat-card-content>
                 </mat-card>
                 <br/>
                 <div style="text-align: center;">
-                    <button mat-raised-button color="primary" (click)="openEventCommentDialog()" class="button" style="text-align: center;">Comentar sobre o Produtor</button>  
+                    <button mat-raised-button color="primary" (click)="openProductionCommentDialog()" class="button" style="text-align: center;">Comentar sobre o Produtor</button>  
                 </div>
             </mat-tab>
         </mat-tab-group>
