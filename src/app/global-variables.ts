@@ -1,3 +1,5 @@
 export const flLogged:boolean = false;
 export const loggedUserId:string = 'loggedUser';
-export const loggedUserLevel:string = 'loggedUserLevel'
+export const loggedUsername:string = 'loggedUsername'
+export const eventId:string = 'eventId'
+export const eventName:string = 'eventName'
