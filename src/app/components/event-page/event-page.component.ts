@@ -7,7 +7,11 @@ import { TicketService } from '../service/ticket.service';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { loggedUserId } from 'src/app/global-variables';
+import { eventId, eventName, loggedUserId, loggedUsername } from 'src/app/global-variables';
+import { MatDialog } from '@angular/material/dialog';
+import { EventCommentComponent } from '../dialogs/event-comment/event-comment.component';
+import { EventCommentService } from '../service/event-comment.service';
+import { EventComment } from '../model/event-comment';
 
 @Component({
   selector: 'app-event-page',
@@ -42,6 +46,7 @@ export class EventPageComponent implements OnInit {
 
   ticketList: Ticket[] = [];
   tempTicketList: Ticket[] = [];
+  eventCommentList: EventComment[] = [];
 
   rating_comment1 = 4;
   rating_comment2 = 5;
@@ -50,9 +55,11 @@ export class EventPageComponent implements OnInit {
   constructor(
     private service: EventService,
     private userService: UserService,
+    private ticketService: TicketService,
+    private eventCommentService: EventCommentService,
     private router: Router,
     private route: ActivatedRoute,
-    private ticketService: TicketService,
+    public dialog: MatDialog,
     private snackBar: MatSnackBar
   ) { }
 
@@ -74,6 +81,10 @@ export class EventPageComponent implements OnInit {
           }
         })
       }
+
+      this.eventCommentService.listar().subscribe((eventCommentList) => {
+        this.eventCommentList = eventCommentList.filter(ec => ec.eventId == event.id)
+      })
     })
     this.listTickets()
 
@@ -125,5 +136,19 @@ export class EventPageComponent implements OnInit {
 
   public favoriteNotLogged() {
     this.snackBar.open('Crie uma conta ou faça o Login para utilizar os Favoritos.', '', { duration: 3000 });
+  }
+
+  public openEventCommentDialog() {
+    sessionStorage.setItem(eventId, this.event.id?.toString()!)
+    sessionStorage.setItem(eventName, this.event.name)
+    sessionStorage.setItem(loggedUsername, this.user.username)
+
+    const MatdialogRef = this.dialog.open(EventCommentComponent, {
+      width: '500px',
+    });
+
+    MatdialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

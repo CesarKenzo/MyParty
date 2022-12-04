@@ -39,6 +39,7 @@ import { EditProfileComponent } from './components/dialogs/edit-profile/edit-pro
 import { UserTicketsComponent } from './components/dialogs/user-tickets/user-tickets.component';
 import { UserFavoriteEventsComponent } from './components/dialogs/user-favorite-events/user-favorite-events.component';
 import { FavoriteCategoriesComponent } from './components/dialogs/favorite-categories/favorite-categories.component';
+import { EventCommentComponent } from './components/dialogs/event-comment/event-comment.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { FavoriteCategoriesComponent } from './components/dialogs/favorite-categ
     UserTicketsComponent,
     UserFavoriteEventsComponent,
     FavoriteCategoriesComponent,
+    EventCommentComponent,
   ],
   imports: [
     BrowserModule,
