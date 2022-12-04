@@ -43,7 +43,8 @@ export class ProfilePageComponent implements OnInit {
     image: '',
     description: '',
     categories: [],
-    features: ''
+    features: '',
+    date: new Date()
   }
 
   userTicketList: UserTicket[] = []
