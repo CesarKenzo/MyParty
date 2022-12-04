@@ -6,4 +6,5 @@ export interface User {
     profile?: string;
     description?: string;
     favoriteCategories?: string[];
+    favoriteEvents?: number[];
 }

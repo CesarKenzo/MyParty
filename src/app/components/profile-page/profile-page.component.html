@@ -36,7 +36,7 @@
         </div>
         <br/>
         <h2>Atalho</h2>
-        <button mat-button (click)="openTranslation()" class="shorcut-button">
+        <button mat-button (click)="openEvents()" class="shorcut-button">
             <mat-icon class="user-data-icon">event</mat-icon>Eventos Favoritos
         </button>
         <button mat-button (click)="openExplanation()" class="shorcut-button">
@@ -45,13 +45,6 @@
         <button mat-button (click)="openTickets()" class="shorcut-button">
             <mat-icon class="user-data-icon">confirmation_number</mat-icon>Ingressos
         </button>
-        <div *ngFor="let userTicket of userTickets">
-            {{userTicket.ticket.name}}
-            <br/>
-            {{userTicket.event.name}}
-            <br/>
-            {{userTicket.user.name}}
-        </div>  
     </div>
     
 </body>

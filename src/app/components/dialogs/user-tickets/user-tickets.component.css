@@ -21,7 +21,7 @@ h1{
 }
 
 .ticketCard {
-    height: 10vh;
+    height: fit-content;
 }
 
 .ticket {

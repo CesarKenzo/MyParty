@@ -10,6 +10,7 @@ import { Ticket } from '../model/ticket';
 import { Event } from '../model/event';
 import { UserTicketService } from '../service/user_ticket.service';
 import { UserTicketsComponent } from '../dialogs/user-tickets/user-tickets.component';
+import { UserFavoriteEventsComponent } from '../dialogs/user-favorite-events/user-favorite-events.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -63,7 +64,15 @@ export class ProfilePageComponent implements OnInit {
     })
   }
 
-  openTranslation() {
+  openEvents() {
+    const dialogRef = this.dialog.open(UserFavoriteEventsComponent, {
+      width: '40vw',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.userService.usuarioLogado = this.user
+      console.log('dialog fechado!' + result);
+      this.router.navigate(['profile'])
+    }); 
   }
 
   openExplanation() {
