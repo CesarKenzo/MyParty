@@ -36,7 +36,8 @@ export class EventPageComponent implements OnInit {
     image: '',
     description: '',
     categories: [],
-    features: ''
+    features: '',
+    date: new Date()
   }
 
   ticketList: Ticket[] = [];

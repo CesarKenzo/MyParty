@@ -72,26 +72,22 @@
                                 <mat-card-title>Usuário 1</mat-card-title>
                                 <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
                             </mat-card-header>
-                            <mat-card-content>
-                                <p>
-                                    Descrição:  
-                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
-                                </p>
-                            </mat-card-content>
+                            <mat-form-field appearance="fill" style="float: end; margin-left: 9vw;">
+                                <mat-label>Valor (R$)</mat-label>
+                                <input matInput style="text-align: end;" value="Valor" readonly/>
+                            </mat-form-field>
                         </mat-card>
                         <br/>
                         <mat-card class="ingresso-card">
                             <mat-card-header>
                                 <div mat-card-avatar class="card_header_avatar"><mat-icon>perm_identity</mat-icon></div>
                                 <mat-card-title>Usuário 2</mat-card-title>
-                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
+                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>          
                             </mat-card-header>
-                            <mat-card-content>
-                                <p>
-                                    Descrição:  
-                                    <input style="float: right; text-align: end;" value="$ Valor" readonly/>
-                                </p>
-                            </mat-card-content>
+                            <mat-form-field appearance="fill" style="float: end; margin-left: 9vw;">
+                                <mat-label>Valor (R$)</mat-label>
+                                <input matInput style="text-align: end;" value="Valor" readonly/>
+                            </mat-form-field>
                         </mat-card>
                     </mat-card-content>
                     <mat-card-actions style="text-align: center;">
@@ -112,14 +108,12 @@
                                 <mat-card-header>
                                     <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
                                     <mat-card-title>{{ticket.name}}</mat-card-title>
-                                    <mat-card-subtitle>{{ticket.type}}</mat-card-subtitle>
+                                    <mat-card-subtitle>{{ticket.type}}</mat-card-subtitle>         
                                 </mat-card-header>
-                                <mat-card-content>
-                                    <p>
-                                        Ingressos Disponíveis: {{ticket.available}}  
-                                        <input style="float: right; text-align: end;" value= {{ticket.value}} readonly/>
-                                    </p>
-                                </mat-card-content>
+                                <mat-form-field appearance="fill" style="float: end; margin-left: 10vw;">
+                                    <mat-label>Valor (R$)</mat-label>
+                                    <input matInput style="text-align: end;" value= {{ticket.value}} readonly/>
+                                </mat-form-field>
                             </mat-card>
                             <br/>
                         </div>

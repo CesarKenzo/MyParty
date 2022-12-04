@@ -32,7 +32,8 @@ export class UserFavoriteEventsComponent implements OnInit {
     image: '',
     description: '',
     categories: [],
-    features: ''
+    features: '',
+    date: new Date()
   }
   
   constructor(
