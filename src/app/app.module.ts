@@ -20,7 +20,7 @@ import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
-
+import {MatDialog, MatDialogModule} from '@angular/material/dialog'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +34,8 @@ import { MarketplaceComponent } from './components/marketplace/marketplace.compo
 import { EventListComponent } from './components/event-list/event-list.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { EditProfileComponent } from './components/dialogs/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
     EventListComponent,
     LoginPageComponent,
     SignupPageComponent,
+    ProfilePageComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +76,7 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
     NgbModule,
     FormsModule,
     HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
