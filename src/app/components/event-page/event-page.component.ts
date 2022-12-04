@@ -7,11 +7,14 @@ import { TicketService } from '../service/ticket.service';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { eventId, eventName, loggedUserId, loggedUsername } from 'src/app/global-variables';
+import { eventId, eventName, loggedUserId, loggedUsername, productionName } from 'src/app/global-variables';
 import { MatDialog } from '@angular/material/dialog';
 import { EventCommentComponent } from '../dialogs/event-comment/event-comment.component';
 import { EventCommentService } from '../service/event-comment.service';
 import { EventComment } from '../model/event-comment';
+import { ProductionCommentService } from '../service/production-comment.service';
+import { ProductionCommentComponent } from '../dialogs/production-comment/production-comment.component';
+import { ProductionComment } from '../model/production-comment';
 
 @Component({
   selector: 'app-event-page',
@@ -47,6 +50,7 @@ export class EventPageComponent implements OnInit {
   ticketList: Ticket[] = [];
   tempTicketList: Ticket[] = [];
   eventCommentList: EventComment[] = [];
+  productionCommentList: ProductionComment[] = [];
 
   rating_comment1 = 4;
   rating_comment2 = 5;
@@ -57,6 +61,7 @@ export class EventPageComponent implements OnInit {
     private userService: UserService,
     private ticketService: TicketService,
     private eventCommentService: EventCommentService,
+    private productionCommentService: ProductionCommentService,
     private router: Router,
     private route: ActivatedRoute,
     public dialog: MatDialog,
@@ -71,8 +76,16 @@ export class EventPageComponent implements OnInit {
     this.service.buscarPorId(parseInt(id!)).subscribe((event) => {
       this.event = event
 
-      if(this.userService.usuarioLogado.id != null) {
-        var userId = sessionStorage.getItem(loggedUserId)
+      this.eventCommentService.listar().subscribe((eventCommentList) => {
+        this.eventCommentList = eventCommentList.filter(ec => ec.eventId == this.event.id)
+      })
+
+      this.productionCommentService.listar().subscribe((productionCommentList) => {
+        this.productionCommentList = productionCommentList.filter(pc => pc.productionName = this.event.production)
+      })
+
+      var userId = sessionStorage.getItem(loggedUserId)
+      if(userId != null) {
         this.userService.buscarPorId(Number.parseInt(userId!)).subscribe((user) => {
           this.user = user
   
@@ -81,14 +94,9 @@ export class EventPageComponent implements OnInit {
           }
         })
       }
-
-      this.eventCommentService.listar().subscribe((eventCommentList) => {
-        this.eventCommentList = eventCommentList.filter(ec => ec.eventId == event.id)
-      })
     })
-    this.listTickets()
-
     
+    this.listTickets()
   }
 
   listTickets() {
@@ -144,6 +152,19 @@ export class EventPageComponent implements OnInit {
     sessionStorage.setItem(loggedUsername, this.user.username)
 
     const MatdialogRef = this.dialog.open(EventCommentComponent, {
+      width: '500px',
+    });
+
+    MatdialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  public openProductionCommentDialog() {
+    sessionStorage.setItem(productionName, this.event.production)
+    sessionStorage.setItem(loggedUsername, this.user.username)
+
+    const MatdialogRef = this.dialog.open(ProductionCommentComponent, {
       width: '500px',
     });
 
