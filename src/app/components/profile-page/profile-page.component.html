@@ -14,8 +14,7 @@
                 </button>
             </div>
             <ul id="categories">
-                <li>Festas Universitárias</li>
-                <li>Música</li>
+                <li *ngFor="let categorie of user.favoriteCategories">{{categorie}}</li>
             </ul>
         </div>
     </div>
