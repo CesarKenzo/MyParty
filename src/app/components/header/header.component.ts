@@ -36,6 +36,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    sessionStorage.clear()
+    localStorage.clear()
     this.userService.logout()
     this.router.navigate(['/event-list'])
     this.flUser = false
