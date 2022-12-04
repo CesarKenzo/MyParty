@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import { Router } from '@angular/router'
+import { flLogged, loggedUserId } from 'src/app/global-variables';
 import { Login } from '../model/login';
 import { User } from '../model/user';
 import { UserService } from '../service/user.service';
@@ -13,6 +14,7 @@ import { UserService } from '../service/user.service';
 })
 export class LoginPageComponent implements OnInit {
 
+  hide = true;
   durationInSeconds = 3;
 
   login: Login = {
@@ -39,6 +41,7 @@ export class LoginPageComponent implements OnInit {
       if(this.login.login != null && this.login.login.length != 0) {
         if(e.username == this.login.login && e.password == this.login.password) {
           this.userService.usuarioLogado = e;
+          sessionStorage.setItem(loggedUserId, e.id!.toString()) 
           flUser = true
           break
         } 
