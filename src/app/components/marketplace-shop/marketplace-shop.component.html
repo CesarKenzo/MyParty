@@ -1,0 +1,135 @@
+<section>
+    <mat-stepper orientation="horizontal" class="stepper">
+      <mat-step>
+        <ng-template matStepLabel>Step 1</ng-template>
+        <br/><br/>
+        <ng-template matStepContent>
+            <div class="side-div">
+                <mat-card class="ticket-card" style="margin-left: 30vw;">
+                    <mat-card-title-group>
+                        <mat-card-title>{{mktTicket.ticketName}} ({{mktTicket.eventName}})</mat-card-title>
+                        <mat-card-subtitle>Vendido Por:&nbsp;{{mktTicket.userName}}</mat-card-subtitle>
+                        <mat-card-subtitle>Evento:&nbsp;{{mktTicket.eventName}}</mat-card-subtitle>
+                    </mat-card-title-group>
+                    <mat-form-field appearance="fill" style="float: right;">
+                        <mat-label>Valor (R$)</mat-label>
+                        <input matInput style="text-align: end;" value= {{mktTicket.value}} readonly/>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+            <br/><br/>
+            <button mat-button matStepperNext style="text-align: center;">Próximo</button>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Step 2</ng-template>
+        <ng-template matStepContent>
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput>
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Sobrenome</mat-label>
+                <input matInput>
+              </mat-form-field></td>
+            </tr></table>
+          
+            <p>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Endereço</mat-label>
+                <textarea matInput placeholder="Ex. Rua X, (Numero)"></textarea>
+              </mat-form-field>
+            </p>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Cidade</mat-label>
+                <input matInput placeholder="Ex. São Paulo">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Estado</mat-label>
+                <input matInput placeholder="Ex. São Paulo">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>CEP</mat-label>
+                <input matInput #cep maxlength="9" placeholder="Ex. 00000-000">
+                <mat-hint align="end">{{cep.value.length}} / 9</mat-hint>
+              </mat-form-field></td>
+            </tr></table>
+          </form>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Próximo</button>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Step 3</ng-template>
+        <ng-template matStepContent>
+          <mat-tab-group>
+            <mat-tab label="Cartão de Crédito">
+              <form class="example-form">
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nome Impresso no Cartão</mat-label>
+                    <input matInput>
+                  </mat-form-field></td>
+                </tr></table>
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Número do Cartão</mat-label>
+                    <input matInput>
+                  </mat-form-field></td>
+                </tr></table>
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Validade</mat-label>
+                    <input matInput placeholder="Ex. MM/YY">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Código de Verificação (CVV)</mat-label>
+                    <input matInput maxlength="3" placeholder="Ex. NNN">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Data de Nascimento</mat-label>
+                    <input matInput placeholder="Ex. dd/MM/yyyy">
+                  </mat-form-field></td>
+                </tr></table>      
+                <p>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>CPF do Titular</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Número de Parcelas</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </p>
+              </form>
+            </mat-tab>
+            <mat-tab label="Pix">
+              <br/><br/>
+              <button mat-button>Pagar com PIX</button>
+              <br/><br/>
+            </mat-tab>
+            <mat-tab label="Boleto Bancário">
+              <br/><br/>
+              <button mat-button>Pagar com Boleto</button>
+              <br/><br/>
+            </mat-tab>
+            <mat-tab label="MyParty Credits">
+              <br/><br/>
+              <button mat-button (click)="buyTicket()">Pagar com Créditos da Plataforma</button>
+              <br/><br/>
+            </mat-tab>
+          </mat-tab-group>
+          
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext routerLink="/event">Finalizar Compra</button>
+        </ng-template>
+      </mat-step>
+    </mat-stepper>
+  </section>
+  
