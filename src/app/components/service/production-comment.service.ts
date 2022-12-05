@@ -8,8 +8,8 @@ import { ProductionComment } from '../model/production-comment';
 })
 export class ProductionCommentService {
 
-  private readonly API = 'http://localhost:3000/productionComments'
-  //private readonly API = 'https://my-party-db.herokuapp.com/productionComments'
+  //private readonly API = 'http://localhost:3000/productionComments'
+  private readonly API = 'https://my-party-db.herokuapp.com/productionComments'
 
   constructor(private http: HttpClient) { }
 

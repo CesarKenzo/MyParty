@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MktTicketService {
-
+  //private readonly API = 'http://localhost:3000/marketplace-ticket'
   private readonly API = 'https://my-party-db.herokuapp.com/marketplace-ticket'
 
   constructor(private http: HttpClient) { }

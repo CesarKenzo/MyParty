@@ -8,8 +8,8 @@ import { Categorie } from '../model/categorie';
 })
 export class CategorieService {
 
-  private readonly API = 'http://localhost:3000/categories'
-  //private readonly API = 'https://my-party-db.herokuapp.com/categories'
+  //private readonly API = 'http://localhost:3000/categories'
+  private readonly API = 'https://my-party-db.herokuapp.com/categories'
 
   constructor(private http: HttpClient) { }
 

@@ -8,8 +8,8 @@ import { EventComment } from '../model/event-comment';
 })
 export class EventCommentService {
 
-  private readonly API = 'http://localhost:3000/eventComments'
-  //private readonly API = 'https://my-party-db.herokuapp.com/eventComments'
+  //private readonly API = 'http://localhost:3000/eventComments'
+  private readonly API = 'https://my-party-db.herokuapp.com/eventComments'
 
   constructor(private http: HttpClient) { }
 
