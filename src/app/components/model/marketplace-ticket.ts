@@ -4,5 +4,8 @@ export interface Marketplace_Ticket {
     eventName: string,
     userName: string,
     value: number,
-    categories: string[]
+    ticketId: number,
+    ticketName: string,
+    ticketType: string, 
+    flSold: boolean
 } 

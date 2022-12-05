@@ -41,6 +41,7 @@ import { UserFavoriteEventsComponent } from './components/dialogs/user-favorite-
 import { FavoriteCategoriesComponent } from './components/dialogs/favorite-categories/favorite-categories.component';
 import { EventCommentComponent } from './components/dialogs/event-comment/event-comment.component';
 import { ProductionCommentComponent } from './components/dialogs/production-comment/production-comment.component';
+import { MarketplaceShopComponent } from './components/marketplace-shop/marketplace-shop.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ProductionCommentComponent } from './components/dialogs/production-comm
     FavoriteCategoriesComponent,
     EventCommentComponent,
     ProductionCommentComponent,
+    MarketplaceShopComponent,
   ],
   imports: [
     BrowserModule,

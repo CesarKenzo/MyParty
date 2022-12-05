@@ -18,7 +18,7 @@ export class MarketplaceComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listar().subscribe((ticketList) => {
-      this.ticketList = ticketList
+      this.ticketList = ticketList.filter(t => t.flSold == false)
     }) 
   }
 
