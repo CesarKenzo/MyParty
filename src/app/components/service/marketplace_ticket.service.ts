@@ -21,4 +21,13 @@ export class MktTicketService {
     return this.http.get<Marketplace_Ticket>(url)
   }
 
+  salvar(record: Marketplace_Ticket) {
+    console.log(record);
+    return this.http.post<Marketplace_Ticket>(this.API, record);
+  }
+
+  editar(record: Marketplace_Ticket): Observable<Marketplace_Ticket> {
+    const url = `${this.API}/${record.id}`;
+    return this.http.put<Marketplace_Ticket>(url, record);
+  }
 }

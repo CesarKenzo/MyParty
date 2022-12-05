@@ -22,27 +22,29 @@
             </mat-form-field>
             </mat-expansion-panel>
         </mat-accordion>
+        <br/><br/>
         <div *ngFor="let ticket of ticketList">
             <tr><br/></tr>
             <div class="row">
                 <mat-card class="example-card">
                     <mat-card-header style="align-items: center;">
                         <div mat-card-avatar class="card_header_avatar"><mat-icon>person</mat-icon></div>
-                        <mat-card-title>
-                            {{ticket.eventName}}
-                        </mat-card-title>
-                        <input class="value-tag" value="$ {{ticket.value}}" readonly/>
+                        <mat-card-title>{{ticket.eventName}}</mat-card-title>
                         <mat-card-subtitle>{{ticket.userName}}</mat-card-subtitle>
+                        <button mat-mini-fab style="margin-left: 44vw; background-color: white;" routerLink="/marketplaceShop/{{ticket.id}}">
+                            <mat-icon style="color: black;">shopping_cart</mat-icon>
+                        </button>
                     </mat-card-header>
                     <mat-card-content>
                         <mat-card class="internal-card">
                             <mat-card-content>
-                                <button mat-mini-fab class="chat-button">
-                                    <mat-icon>chat</mat-icon>
-                                </button>
-                                <mat-chip-list>
-                                    <mat-chip *ngFor="let categorie of ticket.categories"  class="card-chips">{{categorie}}</mat-chip>
-                                </mat-chip-list>    
+                                <mat-card-header>
+                                    <mat-card-subtitle>{{ticket.ticketName}} ({{ticket.ticketType}})</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-form-field appearance="fill" style="margin-left: 45vw;">
+                                    <mat-label>Valor (R$)</mat-label>
+                                    <input matInput style="text-align: end;" value= {{ticket.value}} readonly/>
+                                </mat-form-field>
                             </mat-card-content>
                         </mat-card>
                     </mat-card-content>
@@ -50,6 +52,5 @@
             </div>
             <tr><br/></tr>
         </div>
-        
     </section>
 </section>
