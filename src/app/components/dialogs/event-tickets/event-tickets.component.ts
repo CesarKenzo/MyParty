@@ -24,7 +24,7 @@ export class EventTicketsComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = parseInt(sessionStorage.getItem(eventId)!)
     this.ticketService.listar().subscribe((ticketList) => {
-      this.ticketList = ticketList.filter(t => t.eventId == this.eventId )
+      this.ticketList = ticketList.filter(t => t.eventId == this.eventId)
     })
   }
 }

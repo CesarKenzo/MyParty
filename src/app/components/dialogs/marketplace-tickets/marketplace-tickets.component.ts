@@ -26,13 +26,10 @@ export class MarketplaceTicketsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.mktTicketList = []
     this.eventId = parseInt(sessionStorage.getItem(eventId)!)
-    this.ticketService.listar().subscribe((ticketList) => {
-      this.ticketList = ticketList.filter(t => t.eventId == this.eventId )
-
-      this.mktTicketService.listar().subscribe((mktTicketList) => {
-        this.mktTicketList = mktTicketList
-      })
+    this.mktTicketService.listar().subscribe((mktTicketList) => {
+      this.mktTicketList = mktTicketList.filter(mt => mt.eventId == this.eventId)
     })
   }
 }
