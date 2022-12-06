@@ -56,77 +56,15 @@
         </mat-card>
         <br/><br/>
     </section>
-    <section id="compraCards">
-        <div class="row">
-            <div class="column">
-                <mat-card style="background-color: #4169e14d">
-                    <mat-card-header>
-                        <div mat-card-avatar class="card_header_avatar"><mat-icon>store</mat-icon></div>
-                        <mat-card-title>Marketplace</mat-card-title>
-                        <mat-card-subtitle>Compre de Usuários!</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <mat-card class="ingresso-card">
-                            <mat-card-header style="align-items: center;">
-                                <div mat-card-avatar class="card_header_avatar"><mat-icon>perm_identity</mat-icon></div>
-                                <mat-card-title>Usuário 1</mat-card-title>
-                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-form-field appearance="fill" style="float: end; margin-left: 9vw;">
-                                <mat-label>Valor (R$)</mat-label>
-                                <input matInput style="text-align: end;" value="Valor" readonly/>
-                            </mat-form-field>
-                        </mat-card>
-                        <br/>
-                        <mat-card class="ingresso-card">
-                            <mat-card-header>
-                                <div mat-card-avatar class="card_header_avatar"><mat-icon>perm_identity</mat-icon></div>
-                                <mat-card-title>Usuário 2</mat-card-title>
-                                <mat-card-subtitle>Tipo do Ingresso</mat-card-subtitle>          
-                            </mat-card-header>
-                            <mat-form-field appearance="fill" style="float: end; margin-left: 9vw;">
-                                <mat-label>Valor (R$)</mat-label>
-                                <input matInput style="text-align: end;" value="Valor" readonly/>
-                            </mat-form-field>
-                        </mat-card>
-                    </mat-card-content>
-                    <mat-card-actions style="text-align: center;">
-                        <button mat-button routerLink="/shop">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div class="column">
-                <mat-card style="background-color: #4169e14d">
-                    <mat-card-header>
-                        <div mat-card-avatar class="card_header_avatar"><mat-icon>shopping_cart</mat-icon></div>
-                        <mat-card-title>Ingressos</mat-card-title>
-                        <mat-card-subtitle>Compre seu Ingresso!</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div *ngFor="let ticket of ticketList">
-                            <mat-card class="ingresso-card" >
-                                <mat-card-header style="align-items: center;">
-                                    <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
-                                    <mat-card-title>{{ticket.name}}</mat-card-title>
-                                    <mat-card-subtitle>{{ticket.type}}</mat-card-subtitle>         
-                                </mat-card-header>
-                                <mat-form-field appearance="fill" style="float: end; margin-left: 10vw;">
-                                    <mat-label>Valor (R$)</mat-label>
-                                    <input matInput style="text-align: end;" value= {{ticket.value}} readonly/>
-                                </mat-form-field>
-                            </mat-card>
-                            <br/>
-                        </div>
-                        <br/>
-                    </mat-card-content>
-                    <mat-card-actions style="text-align: center;">
-                        <button mat-button routerLink="/shop/{{event.id}}">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-        </div>
-        <br/><br/>
-    </section>
+    <div class="row">
+        <button mat-button (click)="openMktTickets()" class="shortcut-button">
+            <mat-icon class="user-data-icon">store</mat-icon>&nbsp;&nbsp;MarketPlace
+        </button>
+        <button mat-button (click)="openEventTickets()" class="shortcut-button">
+            <mat-icon class="user-data-icon">confirmation_number</mat-icon>&nbsp;&nbsp;Ingressos
+        </button>
+    </div>
+    <br/><br/>
     <section id="reviews">
         <mat-card-title title="Reviews" style="text-align:center;">Reviews</mat-card-title>
         <mat-tab-group>

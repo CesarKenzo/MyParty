@@ -42,6 +42,8 @@ import { FavoriteCategoriesComponent } from './components/dialogs/favorite-categ
 import { EventCommentComponent } from './components/dialogs/event-comment/event-comment.component';
 import { ProductionCommentComponent } from './components/dialogs/production-comment/production-comment.component';
 import { MarketplaceShopComponent } from './components/marketplace-shop/marketplace-shop.component';
+import { EventTicketsComponent } from './components/dialogs/event-tickets/event-tickets.component';
+import { MarketplaceTicketsComponent } from './components/dialogs/marketplace-tickets/marketplace-tickets.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { MarketplaceShopComponent } from './components/marketplace-shop/marketpl
     EventCommentComponent,
     ProductionCommentComponent,
     MarketplaceShopComponent,
+    EventTicketsComponent,
+    MarketplaceTicketsComponent,
   ],
   imports: [
     BrowserModule,

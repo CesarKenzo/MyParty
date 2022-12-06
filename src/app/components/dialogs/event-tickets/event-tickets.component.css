@@ -1,0 +1,25 @@
+div mat-form-field {
+    width: 100%;
+    display: block;
+}
+
+h1{
+    text-align: center;
+}
+
+.button {
+    align-items: center;
+    justify-content: center;
+}
+
+.selectBox {
+    text-align: center;
+}
+
+.card_header_avatar {
+    background-size: cover;
+}
+
+.example-card {
+    max-width: 25vw;
+}
