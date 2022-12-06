@@ -12,14 +12,23 @@
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <tr><br/></tr>
-            <mat-form-field appearance="fill">
-                <mat-label>Nome do Evento</mat-label>
-                <input matInput>
+            <mat-form-field appearance="fill" class="filter">
+                <mat-label>Categorias</mat-label>
+                <mat-select matNativeControl [(ngModel)]="categorieFilter">
+                  <mat-option value="None">-- Selecione --</mat-option>
+                  <mat-option *ngFor="let categorie of categorieList" [value]="categorie.name">{{categorie.name}}</mat-option>
+                </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Nome do Produtor</mat-label>
-                <input matInput>
+            <mat-form-field appearance="fill" class="filter"> 
+                <mat-label>Produtor</mat-label>
+                <mat-select matNativeControl [(ngModel)]="productionFilter">
+                    <mat-option value="None">-- Selecione --</mat-option>
+                    <mat-option *ngFor="let produtor of produtorList" [value]="produtor.name">{{produtor.name}}</mat-option>
+                </mat-select>
             </mat-form-field>
+            <br/>
+            <button mat-button class="filter-button" (click)="applyFilter()">Filtrar</button>
+            <button mat-button class="filter-button" (click)="listTickets()">Limpar Filtros</button>
             </mat-expansion-panel>
         </mat-accordion>
         <br/><br/>

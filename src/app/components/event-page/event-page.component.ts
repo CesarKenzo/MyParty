@@ -15,6 +15,8 @@ import { EventComment } from '../model/event-comment';
 import { ProductionCommentService } from '../service/production-comment.service';
 import { ProductionCommentComponent } from '../dialogs/production-comment/production-comment.component';
 import { ProductionComment } from '../model/production-comment';
+import { EventTicketsComponent } from '../dialogs/event-tickets/event-tickets.component';
+import { MarketplaceTicketsComponent } from '../dialogs/marketplace-tickets/marketplace-tickets.component';
 
 @Component({
   selector: 'app-event-page',
@@ -171,5 +173,27 @@ export class EventPageComponent implements OnInit {
     MatdialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  public openEventTickets() {
+    sessionStorage.setItem(eventId, this.event.id!.toString())
+    const dialogRef = this.dialog.open(EventTicketsComponent, {
+      width: '60vw',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.userService.usuarioLogado = this.user
+      console.log('dialog fechado!' + result);
+    }); 
+  }
+
+  public openMktTickets() {
+    sessionStorage.setItem(eventId, this.event.id!.toString())
+    const dialogRef = this.dialog.open(MarketplaceTicketsComponent, {
+      width: '60vw',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.userService.usuarioLogado = this.user
+      console.log('dialog fechado!' + result);
+    }); 
   }
 }
