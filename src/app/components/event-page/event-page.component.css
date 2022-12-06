@@ -61,3 +61,11 @@
 .example-card {
     max-width: 25vw;
 }
+
+.shortcut-button {
+    font-size: 2em;
+    width: 45%;
+    height: 20vh;
+    border:2px solid black;
+    margin-left: 2vw;
+}

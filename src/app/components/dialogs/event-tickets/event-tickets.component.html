@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Ingressos</h1>
+<div mat-dialog-content> 
+    <mat-card style="background-color: #4169e14d">
+        <mat-card-header>
+            <div mat-card-avatar class="card_header_avatar"><mat-icon>shopping_cart</mat-icon></div>
+            <mat-card-subtitle>Compre seu Ingresso!</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let ticket of ticketList">
+                <mat-card class="ingresso-card" >
+                    <mat-card-header style="align-items: center;">
+                        <div mat-card-avatar class="card_header_avatar"><mat-icon>book_online</mat-icon></div>
+                        <mat-card-title>{{ticket.name}}</mat-card-title>
+                        <mat-card-subtitle>{{ticket.type}}</mat-card-subtitle>         
+                    </mat-card-header>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Valor (R$)</mat-label>
+                        <input matInput style="text-align: end;" value= {{ticket.value}} readonly/>
+                    </mat-form-field>
+                </mat-card>
+                <br/>
+            </div>
+            <br/>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center;">
+            <button class="cancel" mat-raised-button mat-dialog-close cdkFocusInitial color="warn">Cancelar</button>
+            <button mat-raised-button mat-dialog-close color="primary" routerLink="/shop/{{eventId}}">Comprar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
