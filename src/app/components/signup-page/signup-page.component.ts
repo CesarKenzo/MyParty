@@ -17,9 +17,11 @@ export class SignupPageComponent implements OnInit {
     id: 0,
     name: '',
     username: '',
-    password: '',
-    profile: '',
-    description: ''
+    password: '', 
+    profile: '', 
+    description: '',
+    favoriteCategories: [],
+    favoriteEvents: [] 
   }
 
   constructor(
