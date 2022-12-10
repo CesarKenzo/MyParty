@@ -17,7 +17,7 @@
     </div>
     <br/>
     <div class="right-vertical-container">
-        <div>
+        <div *ngIf="event.name != ''">
             <h2>Último Evento</h2>
             <mat-accordion>
                 <mat-expansion-panel class="lastEvent">
